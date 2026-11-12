@@ -3,7 +3,7 @@
 <meta name="description" content="Chaeree Oh, quantitative marketing Ph.D. candidate at Rutgers University – Newark.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a centered home card; About, Projects and each project are separate pages switched in place. Single light theme on white, by request. */
 :root{
@@ -56,19 +56,20 @@ p{margin:0}
 /* Home */
 .home{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding-block:72px}
 .home-inner{width:100%;max-width:640px;display:grid;gap:22px;margin:0 auto}
-.home h1{font-size:clamp(3rem,8vw,4.6rem);font-weight:700;letter-spacing:-.01em;line-height:1}
+.home h1{font-family:"Libre Baskerville", Baskerville, "Baskerville Old Face", Georgia, serif;font-size:clamp(2.5rem,7vw,3.9rem);font-weight:700;letter-spacing:-.01em;line-height:1}
 .home .title{font-family:var(--f-ui);font-size:1.05rem;font-style:italic;color:var(--accent);margin-top:-6px}
 .home .intro{font-size:1rem;line-height:1.7;display:grid;gap:12px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);color:inherit;padding:0 .06em}
 .rule{width:100%;height:2px;background:var(--ink);border:0;margin:4px 0}
-.tiles{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;padding-bottom:30px}
-.tile{position:relative;width:76px;aspect-ratio:1;max-width:100%;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;
+.tiles{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.tile{position:relative;width:84px;aspect-ratio:1;max-width:100%;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;
   box-shadow:0 1px 2px rgba(30,20,28,.06),0 8px 20px -12px rgba(30,20,28,.25);transition:background .2s,color .2s,transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s,border-color .2s}
-.tile svg{width:30px;height:30px}
+.tile svg{grid-area:1/1;width:30px;height:30px;transition:opacity .18s,transform .18s}
 .tile:hover,.tile:focus-visible{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px);box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 70%,transparent)}
-.tile .tip{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-4px);font-family:var(--f-display);font-size:1.1rem;font-weight:600;color:var(--ink);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
-.tile:hover .tip,.tile:focus-visible .tip{opacity:1;transform:translate(-50%,0)}
-@media (max-width:480px){.tiles{gap:16px}.tile{width:66px;border-radius:19px}.tile svg{width:26px;height:26px}}
+.tile .tip{grid-area:1/1;font-family:var(--f-ui);font-size:1.02rem;font-weight:500;color:#fff;white-space:nowrap;opacity:0;transform:translateY(4px);pointer-events:none;transition:opacity .18s,transform .18s}
+.tile:hover svg,.tile:focus-visible svg{opacity:0;transform:translateY(-4px)}
+.tile:hover .tip,.tile:focus-visible .tip{opacity:1;transform:none}
+@media (max-width:480px){.tiles{gap:16px}.tile{width:72px;border-radius:20px}.tile svg{width:26px;height:26px}.tile .tip{font-size:.92rem}}
 
 /* Inner pages */
 .page{padding-block:72px 80px;display:grid;gap:48px}
