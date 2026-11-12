@@ -1,0 +1,2755 @@
+<title>Chaeree Oh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Chaeree Oh, quantitative marketing Ph.D. candidate at Rutgers University – Newark.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a centered home card; About, Projects and each project are separate pages switched in place. Single light theme on white, by request. */
+:root{
+  --paper:#FFFFFF; --surface:#FFFFFF; --ink:#1E2622; --muted:#5C6763; --line:#DDE3E0;
+  --accent:#B0176C; --accent-soft:#FCEAF3; --mark:#F3E68C;
+  --pos:#2E7B58; --neg:#B0443A; --fut:#3A5AA6; --code-bg:#F3F6F4;
+  --f-display:"Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
+  --f-body:"EB Garamond", Garamond, Georgia, "Times New Roman", serif;
+  --f-ui:"EB Garamond", Garamond, Georgia, serif;
+  --f-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --max:860px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:2rem;font-weight:600;letter-spacing:0}
+h3{font-size:1.3rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-ui);font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:.86em}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Menu (top right) */
+.menu{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));z-index:20}
+.menu-btn{width:44px;height:44px;display:grid;place-items:center;border:0;background:var(--paper);border-radius:8px;cursor:pointer}
+.menu-btn span{display:block;width:24px;height:2.5px;background:var(--ink);border-radius:2px;box-shadow:0 -7px 0 var(--ink),0 7px 0 var(--ink)}
+.menu-btn:hover span{background:var(--accent);box-shadow:0 -7px 0 var(--accent),0 7px 0 var(--accent)}
+.menu-list{position:absolute;right:0;top:44px;padding-top:8px;visibility:hidden;pointer-events:none;transition:visibility 0s linear .3s}
+.menu-list .box{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px -18px rgba(30,20,28,.35);min-width:190px;display:grid;padding:6px;overflow:hidden;
+  transform:translateX(24px);opacity:0;clip-path:inset(0 0 0 100% round 14px);transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .2s ease,clip-path .32s cubic-bezier(.2,.8,.2,1)}
+.menu:hover .menu-list,.menu:focus-within .menu-list,.menu.open .menu-list{visibility:visible;pointer-events:auto;transition-delay:0s}
+.menu:hover .menu-list .box,.menu:focus-within .menu-list .box,.menu.open .menu-list .box{transform:none;opacity:1;clip-path:inset(0 0 0 0 round 14px)}
+.menu-list button{border:0;background:none;text-align:left;padding:10px 14px;border-radius:9px;font-family:var(--f-display);font-weight:600;font-size:1.2rem;cursor:pointer;
+  opacity:0;transform:translateX(14px);transition:opacity .25s ease,transform .3s cubic-bezier(.2,.8,.2,1),background .15s,color .15s}
+.menu:hover .menu-list button,.menu:focus-within .menu-list button,.menu.open .menu-list button{opacity:1;transform:none}
+.menu-list button:nth-child(2){transition-delay:.04s}.menu-list button:nth-child(3){transition-delay:.08s}
+.menu-list button:hover{background:var(--accent-soft);color:var(--accent)}
+.menu-list button[aria-current="page"]{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.menu-list .box,.menu-list button{transition:none}}
+
+/* Home */
+.home{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding-block:72px}
+.home-inner{width:100%;max-width:640px;display:grid;gap:22px;margin:0 auto}
+.home h1{font-size:clamp(3rem,8vw,4.6rem);font-weight:700;letter-spacing:-.01em;line-height:1}
+.home .title{font-family:var(--f-ui);font-size:1.05rem;font-style:italic;color:var(--accent);margin-top:-6px}
+.home .intro{font-size:1rem;line-height:1.7;display:grid;gap:12px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);color:inherit;padding:0 .06em}
+.rule{width:100%;height:2px;background:var(--ink);border:0;margin:4px 0}
+.tiles{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;padding-bottom:30px}
+.tile{position:relative;width:76px;aspect-ratio:1;max-width:100%;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 1px 2px rgba(30,20,28,.06),0 8px 20px -12px rgba(30,20,28,.25);transition:background .2s,color .2s,transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s,border-color .2s}
+.tile svg{width:30px;height:30px}
+.tile:hover,.tile:focus-visible{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px);box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 70%,transparent)}
+.tile .tip{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-4px);font-family:var(--f-display);font-size:1.1rem;font-weight:600;color:var(--ink);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
+.tile:hover .tip,.tile:focus-visible .tip{opacity:1;transform:translate(-50%,0)}
+@media (max-width:480px){.tiles{gap:16px}.tile{width:66px;border-radius:19px}.tile svg{width:26px;height:26px}}
+
+/* Inner pages */
+.page{padding-block:72px 80px;display:grid;gap:48px}
+.page>section{display:grid;gap:18px}
+.prose{display:grid;gap:14px;max-width:66ch}
+.back{justify-self:start;border:0;background:none;padding:0;cursor:pointer;font-family:var(--f-ui);font-style:italic;color:var(--accent);font-size:1rem}
+.back:hover{text-decoration:underline}
+
+.entries{display:grid;gap:22px}
+.entry{display:grid;grid-template-columns:150px 1fr;gap:4px 24px}
+.entry .when{font-family:var(--f-ui);font-size:.92rem;font-style:italic;color:var(--muted);padding-top:3px}
+.entry .body{min-width:0;display:grid;gap:4px}
+.entry h3{font-size:1.25rem}
+.entry .where{color:var(--muted);font-size:.95rem}
+.entry ul{margin:6px 0 0;padding-left:1.1em;display:grid;gap:4px}
+@media (max-width:620px){.entry{grid-template-columns:1fr}.entry .when{padding-top:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--f-ui);font-size:.9rem;font-weight:400;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.kv{display:grid;gap:6px}
+.kv h4{font-size:.95rem}
+.paper{display:grid;gap:10px}
+.paper .cite{font-size:.95rem;color:var(--muted)}
+.about-head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:-12px}
+.cv-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--f-ui);font-size:1rem;font-weight:500;transition:transform .2s,box-shadow .2s}
+.cv-btn svg{width:17px;height:17px}
+.cv-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -12px var(--accent);text-decoration:none}
+.section-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:10px}
+
+/* Project list */
+.plist{display:grid;margin:0;padding:0;list-style:none}
+.plist li+li{border-top:1px solid var(--line)}
+.plist button{width:100%;display:grid;grid-template-columns:72px 1fr auto;gap:4px 16px;align-items:center;text-align:left;border:0;background:none;padding:16px 4px;cursor:pointer}
+.plist button:hover{background:var(--accent-soft)}
+.plist .wk{grid-column:1;grid-row:1;font-family:var(--f-mono);font-size:.8rem;color:var(--accent)}
+.plist .tt{grid-column:2;grid-row:1;font-family:var(--f-display);font-weight:600;font-size:1.3rem;line-height:1.3}
+.plist .sm{grid-column:2;grid-row:2;color:var(--muted);font-size:.93rem}
+.plist .go{grid-column:3;grid-row:1;font-family:var(--f-ui);color:var(--muted)}
+.plist button:hover .go{color:var(--accent)}
+@media (max-width:520px){.plist button{grid-template-columns:1fr auto}.plist .wk{grid-column:1/-1}.plist .tt{grid-column:1;grid-row:2}.plist .go{grid-column:2;grid-row:2}}
+
+/* Project pages */
+.project{display:grid;gap:16px}
+.project .head{display:grid;gap:6px}
+.week{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);font-weight:500}
+.project h3{font-size:clamp(1.9rem,4.5vw,2.5rem);font-weight:600;letter-spacing:0}
+.project .methods{display:flex;flex-wrap:wrap;gap:6px}
+.project .methods span{font-family:var(--f-mono);font-size:.75rem;padding:2px 8px;border:1px solid var(--line);border-radius:4px;color:var(--muted)}
+.pager{display:flex;justify-content:space-between;gap:16px;border-top:3px solid var(--ink);padding-top:16px;flex-wrap:wrap}
+.pager button{border:0;background:none;cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.15rem;line-height:1.3;color:var(--accent);padding:0;text-align:left;max-width:45%}
+.pager .next{text-align:right;margin-left:auto}
+.pager small{display:block;color:var(--muted);font-weight:500;font-size:.78rem}
+
+.notebook{display:grid;gap:14px;margin-top:12px}
+.nb-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.nb-head h4{font-size:1.5rem;font-weight:600}
+.nb-head .mono{font-size:.78rem}
+.nb-md{display:grid;gap:6px;color:var(--muted);font-size:.98rem;padding:4px 2px;overflow-wrap:anywhere}
+.nb-md .nb-h{font-size:1.25rem;color:var(--ink);font-weight:600;margin-top:10px}
+.nb-cell{position:relative;border:1px solid var(--line);border-radius:6px;background:var(--code-bg);min-width:0}
+.nb-cell>pre{padding:12px 16px;white-space:pre-wrap;overflow-wrap:anywhere}
+.nb-n{position:absolute;top:-9px;right:10px;font-family:var(--f-mono);font-size:.68rem;color:var(--muted);background:var(--paper);padding:0 6px;border:1px solid var(--line);border-radius:4px}
+.nb-out{border-top:1px dashed var(--line);background:var(--paper);color:var(--muted);font-size:.74rem;padding:10px 16px;border-radius:0 0 6px 6px;white-space:pre}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:6px}
+.stat .v{font-family:var(--f-display);font-size:1.9rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .k{font-size:.84rem;color:var(--muted);line-height:1.35;margin-top:4px}
+figure{margin:0;display:grid;gap:10px}
+figcaption{font-size:.86rem;color:var(--muted)}
+details.code{border:1px solid var(--line);border-radius:6px;background:var(--code-bg)}
+details.code summary{cursor:pointer;padding:10px 14px;font-family:var(--f-ui);font-size:.9rem;font-weight:600;list-style:none;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+details.code summary::-webkit-details-marker{display:none}
+details.code summary::after{content:"+";font-family:var(--f-mono);color:var(--muted)}
+details.code[open] summary::after{content:"−"}
+details.code summary .file{font-family:var(--f-mono);font-weight:400;font-size:.8rem;color:var(--muted);margin-left:auto}
+pre{margin:0;overflow-x:auto;padding:4px 16px 16px;font-family:var(--f-mono);font-size:.8rem;line-height:1.6;tab-size:2}
+pre .k{color:var(--accent);font-weight:500}
+pre .s{color:var(--fut)}
+pre .c{color:var(--muted);font-style:italic}
+pre .n{color:var(--neg)}
+.digits{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.digit{display:grid;gap:6px;justify-items:center;padding:10px 6px;border-radius:6px;border:1px solid var(--line)}
+.digit canvas{width:100%;max-width:84px;aspect-ratio:1;image-rendering:pixelated}
+.digit .lab{font-family:var(--f-mono);font-size:.74rem;text-align:center;line-height:1.35}
+.digit.ok{border-color:color-mix(in srgb,var(--pos) 55%,var(--line))}
+.digit.miss{border-color:color-mix(in srgb,var(--neg) 55%,var(--line))}
+.ok .res{color:var(--pos)} .miss .res{color:var(--neg)}
+@media (max-width:520px){.digits{gap:6px}.digit{padding:6px 2px}.digit .lab{font-size:.66rem}}
+.bars{display:grid;gap:14px}
+.barrow{display:grid;grid-template-columns:96px 1fr;gap:4px 14px;align-items:center}
+.barrow .name{font-family:var(--f-ui);font-size:.9rem;font-weight:600}
+.barpair{display:grid;gap:4px;min-width:0}
+.bar{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.bar i{display:block;height:12px;border-radius:2px}
+.bar.f i{background:var(--fut)}
+.bar.w i{background:#9AA5A0}
+.legend{display:flex;gap:18px;font-size:.84rem;color:var(--muted);flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.tokrow{display:flex;flex-wrap:wrap;gap:6px}
+.tok{font-family:var(--f-mono);font-size:.8rem;padding:3px 8px;border-radius:4px;background:var(--code-bg);border:1px solid var(--line)}
+.tok small{color:var(--muted);margin-left:6px}
+.matrix{border-collapse:collapse;font-variant-numeric:tabular-nums;font-family:var(--f-ui);font-size:.92rem}
+.matrix th,.matrix td{padding:10px 14px;text-align:right;border:1px solid var(--line)}
+.matrix th{font-weight:600;color:var(--muted);font-size:.8rem}
+.matrix td.hit{background:var(--accent-soft);font-weight:700}
+.scroll{overflow-x:auto}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.words ol{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.words li{font-family:var(--f-mono);font-size:.78rem;padding:3px 8px;border-radius:4px}
+.words .p li{background:color-mix(in srgb,var(--fut) 14%,transparent)}
+.words .q li{background:color-mix(in srgb,var(--neg) 14%,transparent)}
+@media (max-width:520px){.words{grid-template-columns:1fr}}
+.sent{display:grid;gap:10px;padding:16px;border:1px solid var(--line);border-radius:6px}
+.sent .verdict{font-family:var(--f-ui);font-size:.88rem;font-weight:600}
+.sent .ws{display:flex;flex-wrap:wrap;gap:4px 3px;line-height:1}
+.sent .ws span{font-family:var(--f-mono);font-size:.82rem;padding:5px 6px;border-radius:3px}
+.cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-ui);font-weight:600;padding:10px 16px;background:var(--ink);color:var(--paper);text-decoration:none;justify-self:start}
+.cta:hover{background:var(--accent)}
+.contact-line{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.contact-line .addr{font-size:1.1rem;user-select:all}
+button.copy{font-family:var(--f-display);font-size:.84rem;font-weight:600;padding:6px 12px;border:2px solid var(--ink);background:var(--paper);cursor:pointer}
+button.copy:hover{background:var(--ink);color:var(--paper)}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){[data-view]:not([hidden]){animation:in .25s ease-out}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+</style>
+
+<div class="menu" id="menu">
+  <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-haspopup="true"><span></span></button>
+  <div class="menu-list"><div class="box">
+    <button type="button" data-go="home">Home</button>
+    <button type="button" data-go="about">About</button>
+    <button type="button" data-go="projects">Projects</button>
+  </div></div>
+</div>
+
+<!-- ============ HOME ============ -->
+<main class="wrap home" data-view="home">
+  <div class="home-inner">
+    <h1>Chaeree Oh</h1>
+    <p class="title">Ph.D. Candidate in Quantitative Marketing, Rutgers University – Newark</p>
+    <div class="intro">
+      <p>Hi! My name is Chaeree and I am a quantitative marketing PhD candidate at Rutgers University – Newark. I study how consumers adopt new technologies, and how market structure, complementary infrastructure, social influence, and regulation shape that adoption. My current interests include <mark>AI-advertising</mark>, <mark>generative engine optimization</mark>, and <mark>social media</mark>.</p>
+      <p>Outside of research, I like to make art (recently picked up pottery and felting), watch movies, and yoga!</p>
+    </div>
+    <hr class="rule">
+    <nav class="tiles" aria-label="Pages">
+      <button class="tile" type="button" data-go="home" aria-label="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-7a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v7"/><path d="M3 10a2 2 0 0 1 .71-1.53l7-6a2 2 0 0 1 2.58 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="tip">Home</span></button>
+      <button class="tile" type="button" data-go="about" aria-label="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span class="tip">About</span></button>
+      <button class="tile" type="button" data-go="projects" aria-label="Projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><span class="tip">Projects</span></button>
+    </nav>
+  </div>
+</main>
+
+<!-- ============ ABOUT ============ -->
+<main class="wrap page" data-view="about" hidden>
+  <div class="about-head"><p class="eyebrow">About</p></div>
+
+  <section>
+    <div class="section-head"><h2>Education</h2></div>
+    <div class="entries">
+      <div class="entry"><div class="when">May 2030 (exp.)</div><div class="body"><h3>Ph.D. in Management (Marketing)</h3><p class="where">Rutgers University – Newark · Newark, NJ</p></div></div>
+      <div class="entry"><div class="when">Feb 2025</div><div class="body"><h3>M.S. in Business Administration</h3><p class="where">Seoul National University · Seoul, South Korea</p><p>Thesis: <em>Do Chargers Drive EV Adoption? Addressing Endogeneity in the Electric Vehicle Market</em></p></div></div>
+      <div class="entry"><div class="when">Mar 2021</div><div class="body"><h3>B.A. in Economics</h3><p class="where">Mount Holyoke College · South Hadley, MA</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Research interests</h2></div>
+    <p class="prose">How consumers adopt new technologies, and how market structure, complementary infrastructure, social influence, and regulation shape that adoption.</p>
+    <div class="chips"><span class="chip">AI-embedded advertising</span><span class="chip">Generative engine optimization (GEO)</span><span class="chip">Social media</span><span class="chip">Technology adoption</span></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Research &amp; teaching</h2></div>
+    <div class="entries">
+      <div class="entry"><div class="when">May – Sep 2026</div><div class="body"><h3>Summer Research Assistant</h3><p class="where">Rutgers Business School (Professor Erya Ouyang) · Newark, NJ</p><ul><li>Collected data from Facebook fundraiser posts using APIs and web scrapers</li><li>Hand-coded Facebook post content to build training data for analysis</li></ul></div></div>
+      <div class="entry"><div class="when">Mar 2023 – Nov 2024</div><div class="body"><h3>Teaching Assistant</h3><p class="where">Seoul National University Business School · Seoul</p><ul><li>Supported four courses: Business Philosophy and Ethics, Intermediate Accounting II, Topics in Marketing (EMBA), and Marketing Analytics (EMBA)</li><li>Managed course logistics, including attendance and grading of assignments and exams</li><li>Served as the liaison between the professor and students, answering questions and clarifying course material</li></ul></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Professional experience</h2></div>
+    <div class="entries">
+      <div class="entry"><div class="when">Jul 2021 – Jan 2022</div><div class="body"><h3>Associate, MICE Planning Department</h3><p class="where">LUDENS · Busan, South Korea</p><ul><li>Organized international MICE events and developed destination marketing strategies at a professional conference organizer, partnering with public organizations including the Korea Housing &amp; Urban Guarantee Corporation and the Busan Tourism Organization</li><li>Led international promotion for the Busan Convention Bureau: social media accounts, online ad campaigns, and performance analysis to optimize reach</li><li>Organized the 2021 International Housing and Urban Finance Forum, a hybrid in-person and online event; managed speakers and led online marketing, drawing 5,000 livestream viewers</li></ul></div></div>
+      <div class="entry"><div class="when">Jun – Aug 2019</div><div class="body"><h3>Research Intern, PR Department</h3><p class="where">IConnect · Seoul, South Korea</p><ul><li>Analyzed tourism trends and helped organize corporate events at a tourism branding agency representing clients such as Airbnb, Brand USA, and Hawaiian hotels in the Korean market</li><li>Assistant organizer and translator for Brand USA's 2019 Sales Mission, connecting U.S. state tourism boards with Korean travel agencies</li><li>For Four Seasons Oahu: collected data on Korean media coverage, recruited social influencers for sponsorships, researched the outlook for Korean outbound tourism, and organized VIP events</li></ul></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Skills</h2></div>
+    <div class="grid2">
+      <div class="kv"><h4>Programming</h4><div class="chips"><span class="chip">Python · advanced</span><span class="chip">R · advanced</span><span class="chip">Stata</span><span class="chip">MATLAB</span><span class="chip">GAUSS</span></div></div>
+      <div class="kv"><h4>Languages</h4><div class="chips"><span class="chip">English · native</span><span class="chip">Korean · native</span><span class="chip">Japanese · basic</span><span class="chip">Spanish · basic</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Contact</h2></div>
+    <div class="contact-line"><span class="addr" id="email">chaeree.oh@rutgers.edu</span></div>
+    <p class="muted">1 Washington Street, 903D, Newark, New Jersey 07102</p>
+  </section>
+</main>
+
+<!-- ============ PROJECTS ============ -->
+<main class="wrap page" data-view="projects" hidden>
+  <section class="prose">
+    <p class="eyebrow">Projects</p>
+    <h2>Research and coursework</h2>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Paper</h2></div>
+    <article class="paper">
+      <h3>Do Chargers Drive EV Adoption? Addressing Endogeneity in the Electric Vehicle Market</h3>
+      <p class="cite">Oh, C. (2025). Master's thesis, Seoul National University. S-Space.</p>
+      <p>This paper addresses endogeneity in the relationship between electric vehicle (EV) adoption and charging infrastructure. Using a novel instrumental variable tailored to the institutional features of the Korean EV market, it corrects the downward bias in naive estimates of the effect of chargers on adoption and provides a foundation for future research on the EV industry.</p>
+      <p><a href="https://hdl.handle.net/10371/220718" target="_blank" rel="noopener">Read the thesis on S-Space ↗</a></p>
+    </article>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Text Mining</h2><span class="muted" style="font-size:.9rem">Rutgers, Fall 2026 · Python</span></div>
+    <p class="prose muted">Weekly projects from my Text Mining course.</p>
+    <ul class="plist"><li><button type="button" data-go="p-w1"><span class="wk">Week 1</span><span class="tt">A neural network from scratch, tested on my own handwriting</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w2"><span class="wk">Week 2</span><span class="tt">Downloading 100 annual reports from SEC EDGAR</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w3"><span class="wk">Week 3</span><span class="tt">Dictionary-based sentiment in 10-Ks</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w4"><span class="wk">Week 4</span><span class="tt">Readability and forward-looking language</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w5"><span class="wk">Week 5</span><span class="tt">Pulling out MD&amp;A with regular expressions</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w6"><span class="wk">Week 6</span><span class="tt">Scraping and structuring 200 earnings calls</span><span class="go" aria-hidden="true">→</span></button></li><li><button type="button" data-go="p-w9"><span class="wk">Week 9</span><span class="tt">Naive Bayes: is this sentence scripted or spontaneous?</span><span class="go" aria-hidden="true">→</span></button></li></ul>
+  </section>
+</main>
+
+<main class="wrap page" data-view="p-w1" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 1</span><h3>A neural network from scratch, tested on my own handwriting</h3></div>
+    <p>A three-layer network written with only NumPy: 784 inputs (a 28 × 28 image), 200 hidden nodes, and 10 outputs for the digits 0–9, with a sigmoid activation and backpropagation. I trained it on MNIST, then drew ten digits myself to see how it handled handwriting it had never seen.</p>
+    <div class="methods"><span>numpy</span><span>scipy.special.expit</span><span>backpropagation</span><span>MNIST</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v">97.19%</div><div class="k">MNIST test accuracy, 5 epochs</div></div>
+      <div class="stat"><div class="v">96.92%</div><div class="k">10 epochs: slightly worse, a sign of overfitting</div></div>
+      <div class="stat"><div class="v">97.31%</div><div class="k">Trained with rotated copies of each image</div></div>
+      <div class="stat"><div class="v">5 / 10</div><div class="k">My own handwritten digits read correctly</div></div>
+    </div>
+    <figure>
+      <div class="digits" id="digits"></div>
+      <figcaption>My handwriting, downsampled to 28 × 28 as the network sees it. Thin strokes and digits drawn small or off-center (the 1, the 0) were the hardest.</figcaption>
+    </figure>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Text Mining_Week 1.ipynb · 52 code cells</span></div><div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">2*3</code></pre><pre class="nb-out">6</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">print("Hello Workd!")</code></pre><pre class="nb-out">Hello Workd!</pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">x = 10
+print(x)
+print(x+5)
+
+y = x+7
+print(y)
+
+print(z)</code></pre><pre class="nb-out">10
+15
+17</pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">list(range(10))</code></pre><pre class="nb-out">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py">for n in range(10):
+  print(n)
+  pass
+print("done")</code></pre><pre class="nb-out">0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+done</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py">for n in range(10):
+  print("The square of", n, "is", n*n)
+  pass
+
+print("done")</code></pre><pre class="nb-out">The square of 0 is 0
+The square of 1 is 1
+The square of 2 is 4
+The square of 3 is 9
+The square of 4 is 16
+The square of 5 is 25
+The square of 6 is 36
+The square of 7 is 49
+The square of 8 is 64
+The square of 9 is 81
+done</pre></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py"># the following prints out the cube of 2
+print(2**3)</code></pre><pre class="nb-out">8</pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py"># function that takes 2 numbers as input
+# and outputs their average
+def avg(x,y):
+  print("first input is", x)
+  print("second input is", y)
+  a = (x + y) / 2.0
+  print("average is", a)
+  return a</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py">avg(2,4)</code></pre><pre class="nb-out">first input is 2
+second input is 4
+average is 3.0
+3.0</pre></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">avg(200,300)</code></pre><pre class="nb-out">first input is 200
+second input is 300
+average is 250.0
+250.0</pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">import numpy
+
+a = numpy.zeros([3,2])
+print(a)</code></pre><pre class="nb-out">[[0. 0.]
+ [0. 0.]
+ [0. 0.]]</pre></div>
+<div class="nb-cell"><span class="nb-n">[12]</span><pre><code class="py">a[0,0] = 1
+a[0,1] = 2
+a[1,0] = 9
+a[2,1] = 12
+print(a)</code></pre><pre class="nb-out">[[ 1.  2.]
+ [ 9.  0.]
+ [ 0. 12.]]</pre></div>
+<div class="nb-cell"><span class="nb-n">[13]</span><pre><code class="py">print(a[0,1])
+v = a[1,0]
+print(v)</code></pre><pre class="nb-out">2.0
+9.0</pre></div>
+<div class="nb-cell"><span class="nb-n">[14]</span><pre><code class="py">a[0,2]</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[15]</span><pre><code class="py">import matplotlib.pyplot
+%matplotlib inline</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[16]</span><pre><code class="py">matplotlib.pyplot.imshow(a, interpolation="nearest")
+#imshow() creates plot
+#a = array we want to plot
+#interpolation = telling not to blend colors</code></pre><pre class="nb-out">&lt;matplotlib.image.AxesImage at 0x7f0faf9c3a10&gt;&lt;Figure size 640x480 with 1 Axes&gt;</pre></div>
+<div class="nb-cell"><span class="nb-n">[17]</span><pre><code class="py"># class for a dog object
+class Dog:
+  # dogs can bark()
+  def bark(self):
+    print("woof!")
+    pass
+  pass
+
+
+snizzles = Dog()
+snizzles.bark()</code></pre><pre class="nb-out">woof!</pre></div>
+<div class="nb-cell"><span class="nb-n">[18]</span><pre><code class="py">mutley = Dog()
+mutley.bark()</code></pre><pre class="nb-out">woof!</pre></div>
+<div class="nb-cell"><span class="nb-n">[19]</span><pre><code class="py">class Dog:
+  def __init__(self, petname, temp):
+    self.name = petname;
+    self.temperature = temp;
+
+  def status(self):
+    print("dog name is ", self.name)
+    print("dog tempertature is ", self.temperature)
+    pass
+
+  def setTemperature(self, temp):
+    self.temperature = temp;
+    pass
+
+  def bark(self):
+    print("woof")
+    pass
+
+pass</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[20]</span><pre><code class="py">lassie = Dog("Lassie", 37)
+lassie.status()</code></pre><pre class="nb-out">dog name is  Lassie
+dog tempertature is  37</pre></div>
+<div class="nb-cell"><span class="nb-n">[21]</span><pre><code class="py">lassie.setTemperature(40)
+lassie.status()</code></pre><pre class="nb-out">dog name is  Lassie
+dog tempertature is  40</pre></div>
+<div class="nb-cell"><span class="nb-n">[22]</span><pre><code class="py">import numpy
+import scipy.special
+
+class neuralNetwork:
+  def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+    #set nuumber of nodes in each layer
+    self.inodes = inputnodes
+    self.hnodes = hiddennodes
+    self.onodes = outputnodes
+
+    # learning rate
+    self.lr = learningrate
+
+    # link weight matrices, wih and who
+    self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+    self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+
+    # activation function is the sigmoid function
+    self.activation_function = lambda x: scipy.special.expit(x)
+    pass
+
+  # train the neural network
+  def train(self, inputs_list, targets_list):
+    # convert inputs list to 2d array
+    inputs = numpy.array(inputs_list, ndmin=2).T
+    targets = numpy.array(targets_list, ndmin=2).T
+
+    # calculate signals into hidden layer
+    hidden_inputs = numpy.dot(self.wih, inputs)
+
+    # calculate the signals emerging from hidden layer
+    hidden_outputs = self.activation_function(hidden_inputs)
+
+    # calculate signals into final output layer
+    final_inputs = numpy.dot(self.who, hidden_outputs)
+
+    # calculate the signals emerging from final output layer
+    final_outputs = self.activation_function(final_inputs)
+
+    output_errors = targets - final_outputs
+    hidden_errors = numpy.dot(self.who.T, output_errors)
+    self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+
+    self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+
+    pass
+
+  def query(self, inputs_list):
+    inputs = numpy.array(inputs_list, ndmin=2).T
+    # calculate signals into hidden layer
+    hidden_inputs = numpy.dot(self.wih, inputs)
+    # calculate the signals emerging from hidden layer
+    hidden_outputs = self.activation_function(hidden_inputs)
+    # calculate signals into final output layer
+    final_inputs = numpy.dot(self.who, hidden_outputs)
+    # calculate the signals emerging from final output layer
+    final_outputs = self.activation_function(final_inputs)
+    return final_outputs</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[23]</span><pre><code class="py"># number of input, hidden and output nodes
+input_nodes = 3
+hidden_nodes = 3
+output_nodes = 3
+
+# learning rate is 0.3
+learning_rate = 0.3
+
+# create instance of neural network
+n = neuralNetwork(input_nodes,hidden_nodes,output_nodes,
+learning_rate)
+
+n.query([1.0, 0.5, -1.5])</code></pre><pre class="nb-out">array([[0.37823141],
+       [0.64170488],
+       [0.37904292]])</pre></div>
+<div class="nb-cell"><span class="nb-n">[24]</span><pre><code class="py"># weights = used to calculate the signal being fed forward, the error as it’s propagated backwards, and it is the link weights themselves that are refined in an attempt to to improve the network
+
+import numpy</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[25]</span><pre><code class="py">numpy.random.rand(3,3)</code></pre><pre class="nb-out">array([[0.91741287, 0.91532046, 0.86099548],
+       [0.55073174, 0.56909332, 0.87434189],
+       [0.37972657, 0.95989175, 0.92128501]])</pre></div>
+<div class="nb-cell"><span class="nb-n">[26]</span><pre><code class="py">numpy.random.rand(3,3) -0.5</code></pre><pre class="nb-out">array([[-0.09947924, -0.31099058, -0.22737598],
+       [ 0.16410701, -0.13336389,  0.08761464],
+       [ 0.26559851, -0.40572857,  0.11886239]])</pre></div>
+<div class="nb-md"><h4 class="nb-h">MNIST</h4></div>
+<div class="nb-cell"><span class="nb-n">[27]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).</pre></div>
+<div class="nb-cell"><span class="nb-n">[28]</span><pre><code class="py">data_file = open("/content/drive/MyDrive/26 Fall Text Mining/mnist_dataset/mnist_train_100.csv", 'r')
+data_list = data_file.readlines()
+data_file.close()</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[29]</span><pre><code class="py">len(data_list)</code></pre><pre class="nb-out">100</pre></div>
+<div class="nb-cell"><span class="nb-n">[30]</span><pre><code class="py">data_list[0]</code></pre><pre class="nb-out">'5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 …</pre></div>
+<div class="nb-cell"><span class="nb-n">[31]</span><pre><code class="py">import numpy
+import matplotlib.pyplot
+%matplotlib inline</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[32]</span><pre><code class="py">all_values = data_list[0].split(',')
+image_array = numpy.asarray(all_values[1:], dtype=float).reshape((28,28))
+matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')</code></pre><pre class="nb-out">&lt;matplotlib.image.AxesImage at 0x7f0fa40c4050&gt;&lt;Figure size 640x480 with 1 Axes&gt;</pre></div>
+<div class="nb-cell"><span class="nb-n">[33]</span><pre><code class="py">all_values = data_list[1].split(',')
+image_array = numpy.asarray(all_values[1:], dtype=float).reshape((28,28))
+matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')</code></pre><pre class="nb-out">&lt;matplotlib.image.AxesImage at 0x7f0fa4045e50&gt;&lt;Figure size 640x480 with 1 Axes&gt;</pre></div>
+<div class="nb-cell"><span class="nb-n">[34]</span><pre><code class="py">scaled_input = (numpy.asarray(all_values[1:], dtype=float) / 255.0 * 0.99) +0.01
+print(scaled_input)</code></pre><pre class="nb-out">[0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+… 117 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[35]</span><pre><code class="py">#output nodes is 10 (example)
+onodes = 10
+targets = numpy.zeros(onodes) + 0.01
+targets[int(all_values[0])] = 0.99</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[36]</span><pre><code class="py">print(targets)</code></pre><pre class="nb-out">[0.99 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.01]</pre></div>
+<div class="nb-cell"><span class="nb-n">[37]</span><pre><code class="py">import numpy
+import scipy.special
+
+class neuralNetwork:
+  def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+    #set nuumber of nodes in each layer
+    self.inodes = inputnodes
+    self.hnodes = hiddennodes
+    self.onodes = outputnodes
+
+    # learning rate
+    self.lr = learningrate
+
+    # link weight matrices, wih and who
+    self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+    self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+
+    # activation function is the sigmoid function
+    self.activation_function = lambda x: scipy.special.expit(x)
+    pass
+
+  # train the neural network
+  def train(self, inputs_list, targets_list):
+    # convert inputs list to 2d array
+    inputs = numpy.array(inputs_list, ndmin=2).T
+    targets = numpy.array(targets_list, ndmin=2).T
+
+    # calculate signals into hidden layer
+    hidden_inputs = numpy.dot(self.wih, inputs)
+
+    # calculate the signals emerging from hidden layer
+    hidden_outputs = self.activation_function(hidden_inputs)
+
+    # calculate signals into final output layer
+    final_inputs = numpy.dot(self.who, hidden_outputs)
+
+    # calculate the signals emerging from final output layer
+    final_outputs = self.activation_function(final_inputs)
+
+    output_errors = targets - final_outputs
+    hidden_errors = numpy.dot(self.who.T, output_errors)
+    self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+
+    self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+
+    pass
+
+  def query(self, inputs_list):
+    inputs = numpy.array(inputs_list, ndmin=2).T
+    # calculate signals into hidden layer
+    hidden_inputs = numpy.dot(self.wih, inputs)
+    # calculate the signals emerging from hidden layer
+    hidden_outputs = self.activation_function(hidden_inputs)
+    # calculate signals into final output layer
+    final_inputs = numpy.dot(self.who, hidden_outputs)
+    # calculate the signals emerging from final output layer
+    final_outputs = self.activation_function(final_inputs)
+    return final_outputs</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[38]</span><pre><code class="py">#refer to NN above
+
+# number of input, hidden and output nodes
+input_nodes = 784
+hidden_nodes = 200
+output_nodes = 10
+
+# learning rate
+learning_rate = 0.1
+
+# create instance of neural network
+n = neuralNetwork(input_nodes,hidden_nodes,output_nodes, learning_rate)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[39]</span><pre><code class="py">
+# load the mnist training data CSV file into a list
+training_data_file = open("/content/drive/MyDrive/26 Fall Text Mining/mnist_dataset/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[40]</span><pre><code class="py"># train the neural network
+
+# epochs is the number of times the training data set is used for training
+epochs = 10
+
+for e in range(epochs):
+    # go through all records in the training data set
+    for record in training_data_list:
+        # split the record by the ',' commas
+        all_values = record.split(',')
+        # scale and shift the inputs
+        inputs = (numpy.asarray(all_values[1:], dtype = float) / 255.0 * 0.99) + 0.01
+        # create the target output values (all 0.01, except the desired label which is 0.99)
+        targets = numpy.zeros(output_nodes) + 0.01
+        # all_values[0] is the target label for this record
+        targets[int(all_values[0])] = 0.99
+        n.train(inputs, targets)
+        pass
+    pass</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[41]</span><pre><code class="py"># load the mnist test data CSV file into a list
+test_data_file = open("/content/drive/MyDrive/26 Fall Text Mining/mnist_dataset/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[42]</span><pre><code class="py"># get the first test record
+all_values = test_data_list[0].split(',')
+print(all_values[0])</code></pre><pre class="nb-out">7</pre></div>
+<div class="nb-cell"><span class="nb-n">[43]</span><pre><code class="py">image_array = numpy.asarray(all_values[1:], dtype=float).reshape((28,28))
+matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')</code></pre><pre class="nb-out">&lt;matplotlib.image.AxesImage at 0x7f0fd0b6cf50&gt;&lt;Figure size 640x480 with 1 Axes&gt;</pre></div>
+<div class="nb-cell"><span class="nb-n">[44]</span><pre><code class="py">n.query((numpy.asarray(all_values[1:], dtype=float) / 255.0 *0.99) +0.01)</code></pre><pre class="nb-out">array([[0.01371689],
+       [0.00835385],
+       [0.00437531],
+       [0.01357585],
+       [0.00890386],
+       [0.01239769],
+       [0.01606688],
+       [0.97307529],
+       [0.02280511],
+       [0.00946276]])</pre></div>
+<div class="nb-cell"><span class="nb-n">[45]</span><pre><code class="py"># test the neural network
+
+# scorecard for how well the network performs, initially empty
+scorecard = []
+
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # scale and shift the inputs
+    inputs = (numpy.asarray(all_values[1:], dtype = float) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # append correct or incorrect to list
+    if (label == correct_label):
+        # network's answer matches correct answer, add 1 to scorecard
+        scorecard.append(1)
+    else:
+        # network's answer doesn't match correct answer, add 0 to scorecard
+        scorecard.append(0)
+        pass
+
+    pass</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[46]</span><pre><code class="py">print(scorecard)</code></pre><pre class="nb-out">[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  …</pre></div>
+<div class="nb-cell"><span class="nb-n">[47]</span><pre><code class="py"># calculate the performance score, the fraction of correct answers
+# When epoch is 5: performance =  0.9719
+scorecard_array = numpy.asarray(scorecard)
+print ("performance = ", scorecard_array.sum() / scorecard_array.size)</code></pre><pre class="nb-out">performance =  0.9692</pre></div>
+<div class="nb-md"><h4 class="nb-h">My Handwriting</h4></div>
+<div class="nb-cell"><span class="nb-n">[48]</span><pre><code class="py">import imageio.v3
+import glob
+import numpy
+import matplotlib.pyplot
+
+our_own_dataset = []
+
+for image_file_name in glob.glob('/content/drive/MyDrive/26 Fall Text Mining/mnist_dataset/?.png'):
+    print ("loading ... ", image_file_name)
+    # use the filename to set the correct label
+    label = int(image_file_name[-5:-4])
+    # load image data from png files into an array
+    img_array = imageio.v3.imread(image_file_name, mode='F')
+    # reshape from 28x28 to list of 784 values, invert values
+    img_data  = 255.0 - img_array.reshape(784)
+    # then scale data to range from 0.01 to 1.0
+    img_data = (img_data / 255.0 * 0.99) + 0.01
+    print(numpy.min(img_data))
+    print(numpy.max(img_data))
+    # append label and image data  to test data set
+    record = numpy.append(label,img_data)
+    print(record)
+    our_own_dataset.append(record)
+    pass</code></pre><pre class="nb-out">loading ...  /content/drive/MyDrive/26 Fall Text Mining/mnist_dataset/1.png
+0.01
+0.8214118
+[1.         0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+ 0.01       0.01       0.01       0.01       0.01       0.01
+… 1326 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[49]</span><pre><code class="py"># test the neural network with our own images
+
+# record to test
+item = 9
+
+# plot image
+matplotlib.pyplot.imshow(our_own_dataset[item][1:].reshape(28,28), cmap='Greys', interpolation='None')
+
+# correct answer is first value
+correct_label = our_own_dataset[item][0]
+# data is remaining values
+inputs = our_own_dataset[item][1:]
+
+# query the network
+outputs = n.query(inputs)
+print (outputs)
+
+# the index of the highest value corresponds to the label
+label = numpy.argmax(outputs)
+print("network says ", label)
+# append correct or incorrect to list
+if (label == correct_label):
+    print ("match!")
+else:
+    print ("no match!")
+    pass</code></pre><pre class="nb-out">[[1.13167107e-04]
+ [4.49848082e-02]
+ [5.19001619e-02]
+ [6.00324393e-04]
+ [1.59059450e-04]
+ [3.59660345e-01]
+ [2.34219097e-05]
+ [1.76338537e-04]
+ [2.61553485e-06]
+ [9.87296207e-04]]
+network says  5
+match!
+&lt;Figure size 640x480 with 1 Axes&gt;</pre></div>
+<div class="nb-cell"><span class="nb-n">[50]</span><pre><code class="py">print(len(our_own_dataset))</code></pre><pre class="nb-out">10</pre></div>
+<div class="nb-md"><h4 class="nb-h">Train with rotation</h4></div>
+<div class="nb-cell"><span class="nb-n">[51]</span><pre><code class="py"># train the neural network
+
+# epochs is the number of times the training data set is used for training
+epochs = 10
+
+for e in range(epochs):
+    # go through all records in the training data set
+    for record in training_data_list:
+        # split the record by the ',' commas
+        all_values = record.split(',')
+        # scale and shift the inputs
+        inputs = (numpy.asarray(all_values[1:], dtype=float) / 255.0 * 0.99) + 0.01
+        # create the target output values (all 0.01, except the desired label which is 0.99)
+        targets = numpy.zeros(output_nodes) + 0.01
+        # all_values[0] is the target label for this record
+        targets[int(all_values[0])] = 0.99
+        n.train(inputs, targets)
+
+        #############################
+        ## create rotated variations
+        # rotated anticlockwise by 10 degrees
+        inputs_plus10_img = scipy.ndimage.rotate(inputs.reshape(28,28), 10, cval=0.01, order=1, reshape=False)
+        n.train(inputs_plus10_img.reshape(784), targets)
+        # rotated clockwise by 10 degrees
+        inputs_minus10_img = scipy.ndimage.rotate(inputs.reshape(28,28), -10, cval=0.01, order=1, reshape=False)
+        n.train(inputs_minus10_img.reshape(784), targets)
+
+        pass
+    pass</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[52]</span><pre><code class="py">scorecard_array = numpy.asarray(scorecard)
+print ("performance = ", scorecard_array.sum() / scorecard_array.size)</code></pre><pre class="nb-out">performance =  0.9731</pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><span></span><button type="button" class="next" data-go="p-w2"><small>Next</small>Downloading 100 annual reports from SEC EDGAR →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w2" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 2</span><h3>Downloading 100 annual reports from SEC EDGAR</h3></div>
+    <p>I parsed EDGAR's quarterly <span class="mono">company.idx</span> index, pulled out the first 100 10-K filings, built their archive URLs, and downloaded each one. Then I counted every lowercase word across all 100 filings with a <span class="mono">Counter</span>.</p>
+    <div class="methods"><span>requests</span><span>EDGAR index</span><span>re</span><span>collections.Counter</span></div>
+    <figure>
+      <div class="tokrow">
+        <span class="tok">td<small class="num">10,319,925</small></span>
+        <span class="tok">style<small class="num">8,080,755</small></span>
+        <span class="tok">font<small class="num">7,267,612</small></span>
+        <span class="tok">span<small class="num">5,107,342</small></span>
+        <span class="tok">gt<small class="num">4,357,974</small></span>
+      </div>
+      <figcaption>The five most frequent "words" in 100 raw 10-Ks are all HTML markup. That finding is why every later project strips the HTML with BeautifulSoup first.</figcaption>
+    </figure>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week2_Download_10K_Chaeree.ipynb · 13 code cells</span></div><div class="nb-md"><p>Download 100 10-ks to your google drive, not in our shared folder</p>
+<p>Count how many times each word appears in all the 10-Ks with dictionary - {‘word1’: count, ‘word2’: count, ‘word3: count….} make sure all the words are lowercase,</p></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">idxFile = "/content/drive/MyDrive/26 Fall Text Mining/10K/company.idx"
+
+with open(idxFile, 'r') as IndexFile:
+  text = IndexFile.readlines() #becomes a list
+
+for aline in range(11):
+  print(text[aline])</code></pre><pre class="nb-out">Description:           Master Index of EDGAR Dissemination Feed by Company Name
+
+Last Data Received:    March 31, 2025
+
+Comments:              webmaster@sec.gov
+
+Anonymous FTP:         ftp://ftp.sec.gov/edgar/
+
+
+
+
+
+
+
+… 7 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">websitePrefix = "https://www.sec.gov/Archives/"
+
+for i in range(100):
+  if text[i].find("10-K") != -1:
+    print(websitePrefix + text[i].split()[-1]) # .split() turns in to a list</code></pre><pre class="nb-out">https://www.sec.gov/Archives/edgar/data/1770787/0001770787-25-000013.txt</pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">#finds the line with 10k
+
+tenk = []
+
+for i in range (6000):
+  formType = ""
+  CIK = ""
+  fileDate = ""
+  URL = ""
+  if text[i].find('10-K') != -1:
+    fileAttr = {}
+    fileAttr['URL'] = websitePrefix + text[i].split()[-1]
+    fileAttr['fileDate'] = text[i].split()[-2]
+    fileAttr['CIK'] = text[i].split()[-3]
+    fileAttr['formType'] = text[i].split()[-4]
+    tenk.append(fileAttr)
+
+  if len(tenk) == 100:
+    break</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py">print(len(tenk))</code></pre><pre class="nb-out">100</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py">print(tenk[0:5])</code></pre><pre class="nb-out">[{'URL': 'https://www.sec.gov/Archives/edgar/data/1770787/0001770787-25-000013.txt', 'fileDate': '2025-02-13', 'CIK': '1770787', 'formType': '10-K'}, {'URL': 'h …</pre></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py">print(tenk[70]["URL"])</code></pre><pre class="nb-out">https://www.sec.gov/Archives/edgar/data/1837607/0001837607-25-000022.txt</pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py"># download 100 10ks to google folder
+
+import requests
+
+headers = {
+    "User-Agent": "MyResearchApp kevin@example.com"
+}
+
+
+for i in range(100):
+
+  response = requests.get(tenk[i]['URL'], headers=headers)
+  fileName = tenk[i]['formType']+"_"+tenk[i]['CIK']+"_"+tenk[i]['fileDate']+".txt"
+  safeName = fileName.replace('/','-')
+
+  downloadDir = "/content/drive/MyDrive/26 Fall Text Mining/10K/"
+  with open(downloadDir + safeName, "w") as f:
+    f.write(response.text)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py">with open("/content/drive/MyDrive/26 Fall Text Mining/10K/10-K_1004434_2025-02-14.txt", "r") as file:
+    content = file.read()
+    print(content[:500])</code></pre><pre class="nb-out">&lt;SEC-DOCUMENT&gt;0001004434-25-000010.txt : 20250214
+&lt;SEC-HEADER&gt;0001004434-25-000010.hdr.sgml : 20250214
+&lt;ACCEPTANCE-DATETIME&gt;20250214170442
+ACCESSION NUMBER:		0001004434-25-000010
+CONFORMED SUBMISSION TYPE:	10-K
+PUBLIC DOCUMENT COUNT:		134
+CONFORMED PERIOD OF REPORT:	20241231
+FILED AS OF DATE:		20250214
+DATE AS OF CHANGE:		20250214
+
+FILER:
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			AFFILIATED MANAGERS GROUP, INC.
+… 2 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">from pathlib import Path
+import re
+from collections import Counter
+
+folder_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/")
+word_counts = Counter()
+
+
+
+# Use *.txt to match only text files
+for file_path in folder_path.glob("*.txt"):
+    with open(file_path, "r", encoding="utf-8") as file:
+        document = file.read().lower()
+        words = re.findall(r'\b[a-z]+\b', document)
+        #\b[a-z]+\b standalone words of lowercase english letter
+        word_counts.update(words)
+
+word_dict = dict(word_counts)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">for key, value in list(word_dict.items())[:10]:
+    print(key, value)</code></pre><pre class="nb-out">sec 207661
+document 38339
+txt 423
+header 465
+hdr 217
+sgml 100
+acceptance 820
+datetime 111
+accession 161
+number 53081</pre></div>
+<div class="nb-cell"><span class="nb-n">[12]</span><pre><code class="py">print(word_counts.most_common(5))  # Prints the top 5 most frequent words</code></pre><pre class="nb-out">[('td', 10319925), ('style', 8080755), ('font', 7267612), ('span', 5107342), ('gt', 4357974)]</pre></div>
+<div class="nb-cell"><span class="nb-n">[13]</span><pre><code class="py">#print(idxtext[20])
+
+#line = idxtext[20]
+#print(type(line))
+
+
+#for aline in range(10):
+#  if (text[aline].find("10-K")) == 62:
+#    print(text[aline])</code></pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w1"><small>Previous</small>← A neural network from scratch, tested on my own handwriting</button><button type="button" class="next" data-go="p-w3"><small>Next</small>Dictionary-based sentiment in 10-Ks →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w3" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 3</span><h3>Dictionary-based sentiment in 10-Ks</h3></div>
+    <p>After cleaning the HTML, I scored each filing with the Loughran–McDonald Master Dictionary, a word list built for financial text. For every 10-K the dataframe records total words and the count and rate of positive, negative, and litigious words.</p>
+    <div class="methods"><span>BeautifulSoup</span><span>Loughran–McDonald</span><span>pandas</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v num">72,845</div><div class="k">Words in the test 10-K after cleaning</div></div>
+      <div class="stat"><div class="v num">1,009</div><div class="k">Of them on the negative word list</div></div>
+      <div class="stat"><div class="v">1.39%</div><div class="k">Negativity rate for that filing</div></div>
+    </div>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week 3_Sentiment Analysis_Chaeree.ipynb · 11 code cells</span></div><div class="nb-md"><p>In a pandas dataframe</p>
+<p>Columns (filename, wordCount, PositiveWordCount, NegativeWordCount, LitigiousWordCount, PositivityRate, NegativityRate, LitigiousRate)</p>
+<p>100 rows of data from your 10-Ks</p>
+<p><a href="https://pandas.pydata.org/docs/user_guide/10min.html" target="_blank" rel="noopener">https://pandas.pydata.org/docs/user_guide/10min.html</a></p></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Mounted at /content/drive</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">from bs4 import BeautifulSoup
+with open("/content/drive/MyDrive/26 Fall Text Mining/Copy of 10-K_2032966_2025-03-27.txt") as tenK:
+  html = tenK.read()
+
+soup = BeautifulSoup(html)
+#print(soup)
+#print(soup.get_text()[10000:11000])</code></pre></div>
+<div class="nb-md"><h4 class="nb-h">Negativity Example</h4></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">with open("/content/drive/MyDrive/26 Fall Text Mining/Copy of 10-K_2032966_2025-03-27.txt", 'r') as cleanText:
+  soup = BeautifulSoup(html)
+  cleaned  = soup.get_text()
+  #cleanText.write(cleaned)
+
+
+textList = cleaned.lower().split()
+
+wordDict = {} # {'a', 3495, 'the', 434342 ...}
+
+for word in textList:
+  if word in wordDict:
+    wordDict[word] += 1
+  else:
+    wordDict[word] = 1</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">totalWords = 0
+totalWords = len(textList)
+negativeWords = 0
+negativityRate = 0.0
+
+
+AllNegativeSet = set()
+
+with open("/content/drive/MyDrive/26 Fall Text Mining/NegativeWords.txt") as AllNegative:
+  for line in AllNegative:
+    AllNegativeSet.add(line.strip().lower())
+
+print(list(AllNegativeSet))
+
+for word in textList:
+  if word in AllNegativeSet:
+    negativeWords += 1</code></pre><pre class="nb-out">['encumbers', 'terminations', 'taint', 'suspension', 'obstructions', 'bottlenecks', 'corruption', 'disregarded', 'falsifications', 'discontinues', 'postponement …</pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py">print(negativeWords)
+print(totalWords)</code></pre><pre class="nb-out">1009
+72845</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py">#negativity rate
+
+negativityRate = negativeWords/totalWords
+
+negativityRate</code></pre><pre class="nb-out">0.013851328162536893</pre></div>
+<div class="nb-md"><h4 class="nb-h">Positive, Negative, and Litigious</h4></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py">import pandas as pd
+from pathlib import Path
+
+LM = pd.read_csv("/content/drive/MyDrive/26 Fall Text Mining/Loughran-McDonald_MasterDictionary_1993-2025.csv")
+
+PositiveSet = set(LM.loc[LM["Positive"] &gt; 0, "Word"].str.lower())
+NegativeSet = set(LM.loc[LM["Negative"] &gt; 0, "Word"].str.lower())
+LitigiousSet = set(LM.loc[LM["Litigious"] &gt; 0, "Word"].str.lower())</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py">print(PositiveSet)</code></pre><pre class="nb-out">{'honoring', 'upturns', 'fantastic', 'desired', 'favorable', 'innovation', 'stabilizing', 'easier', 'smoothing', 'proficiency', 'upturn', 'breakthroughs', 'vibr …</pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py">
+folder_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/")
+
+results = []
+
+for file_path in folder_path.glob("*.txt"):
+
+    # Read the document
+    with open(file_path, "r", encoding="utf-8") as tenK:
+        html = tenK.read()
+    soup = BeautifulSoup(html)
+    cleaned  = soup.get_text()
+
+    textList = cleaned.lower().split()
+
+    totalWords = 0
+    totalWords = len(textList)
+    negativeWords = 0
+    negativityRate = 0.0
+    positiveWords = 0
+    positivityRate = 0.0
+    litigiousWords = 0
+    litigiousRate = 0.0
+
+    # Word count
+    wordDict = {} # {'a', 3495, 'the', 434342 ...}
+
+    for word in textList:
+      if word in wordDict:
+        wordDict[word] += 1
+      else:
+        wordDict[word] = 1
+
+    for word in textList:
+        if word in NegativeSet:
+          negativeWords += 1
+        if word in PositiveSet:
+          positiveWords += 1
+        if word in LitigiousSet:
+          litigiousWords += 1
+
+    positivityRate = positiveWords / totalWords
+    negativityRate = negativeWords / totalWords
+    litigiousRate = litigiousWords / totalWords
+
+    results.append({
+        "filename": file_path.name,
+        "wordCount": totalWords,
+        "PositiveWordCount": positiveWords,
+        "NegativeWordCount": negativeWords,
+        "LitigiousWordCount": litigiousWords,
+        "PositivityRate": positivityRate,
+        "NegativityRate": negativityRate,
+        "LitigiousRate": litigiousRate
+    })
+
+df = pd.DataFrame(results)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">df.head(100)</code></pre><pre class="nb-out">                     filename  wordCount  PositiveWordCount  \
+0   10-K_66740_2025-02-05.txt     664734                799   
+1    10-K_2488_2025-02-05.txt     380598                489   
+2  10-K_738214_2025-03-14.txt     376085                488   
+3    10-K_4977_2025-02-26.txt    1037150               1882   
+4  10-K_318306_2025-03-20.txt     327409                901   
+
+   NegativeWordCount  LitigiousWordCount  PositivityRate  NegativityRate  \
+0               6025                7283        0.001202        0.009064   
+1               2284                3258        0.001285        0.006001   
+2               1805                2807        0.001298        0.004799   
+3               3749                6057        0.001815        0.003615   
+4               2142                2596        0.002752        0.006542   
+
+… 6 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">df.to_csv('/content/drive/MyDrive/26 Fall Text Mining/week3_sentiment_analysis.csv', index=False)</code></pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w2"><small>Previous</small>← Downloading 100 annual reports from SEC EDGAR</button><button type="button" class="next" data-go="p-w4"><small>Next</small>Readability and forward-looking language →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w4" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 4</span><h3>Readability and forward-looking language</h3></div>
+    <p>I added the Gunning Fog index, a readability score that estimates the years of schooling a reader needs. Syllable counts come from the CMU Pronouncing Dictionary, and words with more than three syllables count as complex. I also flagged future-oriented sentences (those containing <em>will, shall, may, might, should,</em> or <em>going to</em>) and computed a "future" version of every measure, doubling the columns.</p>
+    <div class="methods"><span>nltk sent_tokenize</span><span>CMU dict</span><span>Gunning Fog</span></div>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week4_Readability.ipynb · 9 code cells</span></div><div class="nb-md"><p>Add the following to your dataframe:</p>
+<p>-Total sentences (use nltk sentence parser)</p>
+<p>Identify future-oriented sentences by looking for future oriented words</p>
+<p>-FOG</p>
+<p>-Total complex words (for the whole doc and for future tense)   &gt;3 syllables</p>
+<p>-Total Future Sentences</p>
+<p>-every variable/column should have a future version (this doubles the number of columns, e.g. positivity and future_positivity)</p>
+<p>Future oriented words</p>
+<p>Will</p>
+<p>Shall</p>
+<p>May</p>
+<p>Might</p>
+<p>Should</p>
+<p>*Going to</p></div>
+<div class="nb-md"><h4 class="nb-h">Counting Syllables (Class Exercise)</h4></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Mounted at /content/drive</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">!pip install syllables</code></pre><pre class="nb-out">Collecting syllables
+  Downloading syllables-1.1.5-py3-none-any.whl.metadata (2.7 kB)
+Collecting cmudict&gt;=1.0.11 (from syllables)
+  Downloading cmudict-1.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting importlib-metadata&lt;7.0,&gt;=5.1 (from syllables)
+  Downloading importlib_metadata-6.11.0-py3-none-any.whl.metadata (4.9 kB)
+Collecting importlib-resources&gt;=5 (from cmudict&gt;=1.0.11-&gt;syllables)
+  Downloading importlib_resources-7.1.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.13/dist-packages (from importlib-metadata&lt;7.0,&gt;=5.1-&gt;syllables) (4.1.0)
+Downloading syllables-1.1.5-py3-none-any.whl (15 kB)
+Downloading cmudict-1.1.3-py3-none-any.whl (939 kB)
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m939.7/939.7 kB[0m [31m4.0 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading importlib_metadata-6.11.0-py3-none-any.whl (23 kB)
+Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+… 6 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">import nltk
+nltk.download('punkt_tab')
+import os
+import pandas as pd
+import syllables
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize</code></pre><pre class="nb-out">[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!</pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">cmufile = "/content/drive/MyDrive/26 Fall Text Mining/cmudict.txt"
+
+
+with open(cmufile, encoding = 'latin-1') as cmu:
+  cmuLines = cmu.readlines()
+
+syllableDict = {}
+for aline in cmuLines[56:]:
+  syllableCount =0
+  for char in aline:
+    if char.isdigit():
+      syllableCount +=1
+  #print(aline.split()[0], syllableCount)
+  syllableDict[aline.split()[0].lower()] = syllableCount
+
+def getSyllables(word):
+  syllables = syllableDict[word]
+  return syllables
+
+def isComplexWord(word):
+  if word not in syllableDict:
+    return False
+
+  syllables = syllableDict[word]
+
+  if syllables &gt; 3:
+    return True
+  else:
+    return False
+
+def isFuture(sentence):
+  futureWords = ['will','shall','may','might','should','going','gonna']
+  sentWords = word_tokenize(sentence)
+  #print(sentWords)
+  for word in futureWords:
+    if word in sentWords:
+      #print(sentWords)
+      return True
+
+  return False</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py">#print(getSyllables('kevin'))
+#print(syllables.estimate('kevinfdsafdafdfdsfa'))
+
+print (isComplexWord('generalize'))
+
+text = "NLTK is going to be a great NLP toolkit. It makes processing text easy!"
+sentences = sent_tokenize(text)
+words = word_tokenize(sentences[0])
+print(words)
+print(sentences[0])
+print (isFuture(sentences[0]))</code></pre><pre class="nb-out">True
+['NLTK', 'is', 'going', 'to', 'be', 'a', 'great', 'NLP', 'toolkit', '.']
+NLTK is going to be a great NLP toolkit.
+True</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py">import pandas as pd
+from pathlib import Path
+from bs4 import BeautifulSoup
+import re
+file_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/10-K_1514281_2025-03-04.txt")
+
+results = []
+
+
+with open(file_path, "r", encoding="utf-8") as tenK:
+  html = tenK.read()
+soup = BeautifulSoup(html)
+cleaned  = soup.get_text()
+
+textList = re.findall(r"\b[a-z']+\b", cleaned.lower())
+
+cleanedlower = cleaned.lower()
+print(cleanedlower[6000:6500])</code></pre><pre class="nb-out">60001514281mitt:westernassetmortgagecapitalcorporationmemberus-gaap:commercialmortgagebackedsecuritiesmember2023-12-060001514281mitt:westernassetmortgagecapital …</pre></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py">def itemseven(tenk):
+  item7RegEx = re.compile("(item 7.(.+?))item 7a", re.S)
+  MDA = item7RegEx.findall(tenk)
+
+  return MDA
+'''
+  if len(MDA)&gt;= 2:
+    return MDA[1]
+  return MDA[0]
+'''
+
+test = itemseven(cleanedlower)
+print(test)
+
+print(test[1])</code></pre><pre class="nb-out">[('item 7.management’s discussion and analysis of financial condition and results of operations50', 'management’s discussion and analysis of financial condition …
+('item 7), might reduce its incentive to devote its time and effort to seeking loans or other investments that provide attractive risk-adjusted returns for our  …</pre></div>
+<div class="nb-md"><h4 class="nb-h">Assignment</h4></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py">import pandas as pd
+from pathlib import Path
+from bs4 import BeautifulSoup
+import re
+
+LM = pd.read_csv("/content/drive/MyDrive/26 Fall Text Mining/Loughran-McDonald_MasterDictionary_1993-2025.csv")
+
+PositiveSet = set(LM.loc[LM["Positive"] &gt; 0, "Word"].str.lower())
+NegativeSet = set(LM.loc[LM["Negative"] &gt; 0, "Word"].str.lower())
+LitigiousSet = set(LM.loc[LM["Litigious"] &gt; 0, "Word"].str.lower())
+
+
+folder_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/")
+
+results = []
+
+for file_path in folder_path.glob("*.txt"):
+
+    # Read the document
+    with open(file_path, "r", encoding="utf-8") as tenK:
+        html = tenK.read()
+    soup = BeautifulSoup(html)
+    cleaned  = soup.get_text()
+
+    textList = re.findall(r"\b[a-z']+\b", cleaned.lower())
+
+
+    totalWords = 0
+    totalWords = len(textList)
+    negativeWords = 0
+    negativityRate = 0.0
+    positiveWords = 0
+    positivityRate = 0.0
+    litigiousWords = 0
+    litigiousRate = 0.0
+
+    totalComplexWords = 0
+
+    futureWords = 0
+    futureComplexWords = 0
+    futurePositiveWords = 0
+    futureNegativeWords = 0
+    futureLitigiousWords = 0
+
+    # Word count
+    wordDict = {} # {'a', 3495, 'the', 434342 ...}
+
+    for word in textList:
+      if word in wordDict:
+        wordDict[word] += 1
+      else:
+        wordDict[word] = 1
+
+    for word in textList:
+      if word in NegativeSet:
+        negativeWords += 1
+      if word in PositiveSet:
+        positiveWords += 1
+      if word in LitigiousSet:
+        litigiousWords += 1
+
+    positivityRate = positiveWords / totalWords
+    negativityRate = negativeWords / totalWords
+    litigiousRate = litigiousWords / totalWords
+
+
+    # Complex Words
+    for word in textList:
+      if isComplexWord(word):
+          totalComplexWords += 1
+
+
+    # Sentences
+    sentences = sent_tokenize(cleaned)
+    totalSentences = len(sentences)
+
+    # future Sentences
+    futureSentencesList = []
+    for sentence in sentences:
+      if isFuture(sentence):
+        futureSentencesList.append(sentence)
+    totalFutureSentences = len(futureSentencesList)
+
+    # FOG
+    complexWordPercentage = (totalComplexWords / totalWords)
+    averageSentenceLength = (totalWords / totalSentences)
+
+    fog = 0.4 * (averageSentenceLength + 100 * complexWordPercentage)
+
+
+
+    # future
+    futureTotalWords = 0
+    for sentence in futureSentencesList:
+      cleanWords = re.findall(r"\b[a-z']+\b", sentence.lower())
+      futureTotalWords += len(cleanWords)
+
+      for word in cleanWords:
+
+        # Future word count
+        if word in ['will','shall','may','might','should','going','gonna']:
+          futureWords += 1
+
+        if isComplexWord(word):
+          futureComplexWords += 1
+        if word in PositiveSet:
+          futurePositiveWords += 1
+        if word in NegativeSet:
+          futureNegativeWords += 1
+        if word in LitigiousSet:
+          futureLitigiousWords += 1
+
+    # future rate
+    futurePositivityRate = futurePositiveWords / futureTotalWords
+    futureNegativityRate = futureNegativeWords / futureTotalWords
+    futureLitigiousRate = futureLitigiousWords / futureTotalWords
+
+    # Future FOG
+    futureAverageSentenceLength = futureTotalWords /totalFutureSentences
+    futureComplexWordPercentage = futureComplexWords / futureTotalWords
+
+    futureFog = 0.4 * (futureAverageSentenceLength + 100 * futureComplexWordPercentage)
+
+
+
+    results.append({
+        "Filename": file_path.name,
+        "Word_Count": totalWords,
+        "Total_Sentences": totalSentences,
+        "Total_Complex_Words": totalComplexWords,
+        "FOG": fog,
+
+        "Positive_Word_Count": positiveWords,
+        "Negative_Word_Count": negativeWords,
+        "Litigious_Word_Count": litigiousWords,
+        "Positivity_Rate": positivityRate,
+        "Negativity_Rate": negativityRate,
+        "Litigious_Rate": litigiousRate,
+
+
+        #future
+        "Future_Word_Count": futureWords,
+        "Total_Future_Sentences": totalFutureSentences,
+        "Future_Complex_Words": futureComplexWords,
+        "Future_Positive_Word_Count": futurePositiveWords,
+        "Future_Negative_Word_Count": futureNegativeWords,
+        "Future_Litigious_Word_Count": futureLitigiousWords,
+        "Future_Positivity_Rate": futurePositivityRate,
+        "Future_Negativity_Rate": futureNegativityRate,
+        "Future_Litigious_Rate": futureLitigiousRate,
+        "Future_FOG": futureFog,
+    })
+
+
+
+
+df = pd.DataFrame(results)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py">df.head(50)</code></pre><pre class="nb-out">                       Filename  Word_Count  Total_Sentences  \
+0   10-K_1770787_2025-02-13.txt     1004722            47176   
+1   10-K_1690080_2025-03-31.txt      537206            15011   
+2   10-K_1599407_2025-03-31.txt      635570            15473   
+3     10-K_34782_2025-02-18.txt     1014687            20717   
+4   10-K_1347858_2025-03-20.txt      638631             9783   
+5   10-K_1950976_2025-03-03.txt      610505            10439   
+6   10-K_1860782_2025-03-25.txt      554050            10715   
+7   10-K_1890702_2025-03-07.txt      125982             1151   
+8   10-K_1948175_2025-03-10.txt      106183             1084   
+9    10-K_933972_2025-03-28.txt     1281042            64995   
+10   10-K_910638_2025-03-27.txt      673838            12847   
+11    10-K_66740_2025-02-05.txt     1068538            15422   
+12  10-K_1650648_2025-02-28.txt      676787            11991   
+… 351 more lines</pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w3"><small>Previous</small>← Dictionary-based sentiment in 10-Ks</button><button type="button" class="next" data-go="p-w5"><small>Next</small>Pulling out MD&amp;A with regular expressions →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w5" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 5</span><h3>Pulling out MD&amp;A with regular expressions</h3></div>
+    <p>Item 7 of a 10-K, Management's Discussion and Analysis, is where executives explain results in their own words. I wrote a regex that finds the text between "Item 7." and "Item 7A.", keeps the longest match (to skip the table of contents), and reran every measure on that section. The final dataset has 100 filings and 42 columns, saved as a pickle.</p>
+    <div class="methods"><span>re</span><span>pandas</span><span>pickle</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v num">100 × 42</div><div class="k">Filings × measures in the final dataframe</div></div>
+      <div class="stat"><div class="v num">87</div><div class="k">Filings with an MD&amp;A section the regex could extract</div></div>
+      <div class="stat"><div class="v num">21.3 → 32.3</div><div class="k">Median Fog: whole 10-K vs. its future-tense sentences</div></div>
+    </div>
+    <figure>
+      <div class="legend"><span style="--c:color-mix(in srgb,var(--ink) 35%,var(--paper))">All sentences</span><span style="--c:var(--fut)">Future-oriented sentences</span></div>
+      <div class="bars" id="bars"></div>
+      <figcaption>Median share of Loughran–McDonald words across the 100 10-Ks. Forward-looking sentences carry nearly three times the positive and twice the negative language, and they are much harder to read.</figcaption>
+    </figure>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week5_Regular Expressions.ipynb · 14 code cells</span></div><div class="nb-md"><p>Extract Item 7, MD&amp;A, from your 100 10-Ks. Put MD&amp;A in your dataframe in one column. Run all of your code on the MD&amp;A and put in Dataframe. (your dataframe will contain data for the entire 10-K, and data for the MD&amp;A). Save your dataframe as a pickle object so you don’t have to start from scratch anymore!!!</p></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Mounted at /content/drive</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">!pip install syllables</code></pre><pre class="nb-out">Collecting syllables
+  Downloading syllables-1.1.5-py3-none-any.whl.metadata (2.7 kB)
+Collecting cmudict&gt;=1.0.11 (from syllables)
+  Downloading cmudict-1.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting importlib-metadata&lt;7.0,&gt;=5.1 (from syllables)
+  Downloading importlib_metadata-6.11.0-py3-none-any.whl.metadata (4.9 kB)
+Collecting importlib-resources&gt;=5 (from cmudict&gt;=1.0.11-&gt;syllables)
+  Downloading importlib_resources-7.1.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.13/dist-packages (from importlib-metadata&lt;7.0,&gt;=5.1-&gt;syllables) (4.1.0)
+Downloading syllables-1.1.5-py3-none-any.whl (15 kB)
+Downloading cmudict-1.1.3-py3-none-any.whl (939 kB)
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m939.7/939.7 kB[0m [31m17.2 MB/s[0m eta [36m0:00:00[0m
+[?25hDownloading importlib_metadata-6.11.0-py3-none-any.whl (23 kB)
+Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+… 6 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">from pathlib import Path
+from bs4 import BeautifulSoup
+import re
+import nltk
+nltk.download('punkt_tab')
+import os
+import pandas as pd
+import syllables
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize</code></pre><pre class="nb-out">[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.</pre></div>
+<div class="nb-md"><h4 class="nb-h">Functions</h4>
+<p>(Mostly from last class)</p></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">cmufile = "/content/drive/MyDrive/26 Fall Text Mining/cmudict.txt"
+
+
+with open(cmufile, encoding = 'latin-1') as cmu:
+  cmuLines = cmu.readlines()
+
+syllableDict = {}
+for aline in cmuLines[56:]:
+  syllableCount =0
+  for char in aline:
+    if char.isdigit():
+      syllableCount +=1
+  #print(aline.split()[0], syllableCount)
+  syllableDict[aline.split()[0].lower()] = syllableCount
+
+def getSyllables(word):
+  syllables = syllableDict[word]
+  return syllables
+
+def isComplexWord(word):
+  if word not in syllableDict:
+    return False
+
+  syllables = syllableDict[word]
+
+  if syllables &gt; 2:
+    return True
+  else:
+    return False
+
+def isFuture(sentence):
+  futureWords = ['will','shall','may','might','should','going','gonna']
+  sentWords = word_tokenize(sentence)
+  #print(sentWords)
+  for word in futureWords:
+    if word in sentWords:
+      #print(sentWords)
+      return True
+
+  return False
+
+'''
+# Extract item 7
+def itemseven(tenk):
+  item7RegEx = re.compile("(item 7(.+?))item 7a", re.S)
+  MDA = item7RegEx.search(tenk).group(1)
+
+  return MDA
+'''</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py">def itemseven(tenk):
+  tenk = tenk.replace('\xa0', ' ')   # Remove \xa0 from a string using str.replace() https://www.geeksforgeeks.org/python/remove-xa0-from-a-string-in-python/
+
+  # \s* = any amount of spaces
+  item7RegEx = re.compile("item\s*7\.(.+?)item\s*7a\.", re.S)
+  MDA = item7RegEx.findall(tenk)
+  if not MDA:
+      return ""
+
+  return max(MDA, key=len)</code></pre><pre class="nb-out">&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\s'
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\s'
+/tmp/ipykernel_1800/1177680705.py:5: SyntaxWarning: invalid escape sequence '\s'
+  item7RegEx = re.compile("item\s*7\.(.+?)item\s*7a\.", re.S)</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py">'''
+# Test
+
+file_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/10-K_2032966_2025-03-27.txt")
+
+results = []
+
+
+with open(file_path, "r", encoding="utf-8") as tenK:
+  html = tenK.read()
+soup = BeautifulSoup(html)
+cleaned  = soup.get_text()
+
+textList = re.findall(r"\b[a-z']+\b", cleaned.lower())
+
+cleanedlower = cleaned.lower()
+print(cleanedlower[5100:6000])
+
+def itemseven(tenk):
+  item7RegEx = re.compile("(item 7(.+?))item 7a", re.S)
+  MDA = item7RegEx.search(tenk).group(1)
+
+  return MDA
+
+test = itemseven(cleanedlower)
+print(test)
+'''</code></pre><pre class="nb-out">'\n# Test\n\nfile_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/10-K_2032966_2025-03-27.txt")\n\nresults = []\n\n\nwith open(file_path, "r", encod …</pre></div>
+<div class="nb-md"><h4 class="nb-h">Assignment</h4></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py">LM = pd.read_csv("/content/drive/MyDrive/26 Fall Text Mining/Loughran-McDonald_MasterDictionary_1993-2025.csv")
+
+PositiveSet = set(LM.loc[LM["Positive"] &gt; 0, "Word"].str.lower())
+NegativeSet = set(LM.loc[LM["Negative"] &gt; 0, "Word"].str.lower())
+LitigiousSet = set(LM.loc[LM["Litigious"] &gt; 0, "Word"].str.lower())
+
+
+folder_path = Path("/content/drive/MyDrive/26 Fall Text Mining/10K/")
+
+results = []
+
+for file_path in folder_path.glob("*.txt"):
+
+    # Read the document
+    with open(file_path, "r", encoding="utf-8") as tenK:
+        html = tenK.read()
+    soup = BeautifulSoup(html)
+    cleaned  = soup.get_text()
+
+    textList = re.findall(r"\b[a-z']+\b", cleaned.lower())
+
+
+    totalWords = 0
+    totalWords = len(textList)
+    negativeWords = 0
+    negativityRate = 0.0
+    positiveWords = 0
+    positivityRate = 0.0
+    litigiousWords = 0
+    litigiousRate = 0.0
+
+    totalComplexWords = 0
+
+    futureWords = 0
+    futureComplexWords = 0
+    futurePositiveWords = 0
+    futureNegativeWords = 0
+    futureLitigiousWords = 0
+
+    # Word count
+    wordDict = {} # {'a', 3495, 'the', 434342 ...}
+################## Combined codes for efficiency ###
+    for word in textList:
+      if word in NegativeSet:
+        negativeWords += 1
+      if word in PositiveSet:
+        positiveWords += 1
+      if word in LitigiousSet:
+        litigiousWords += 1
+      # Complex Words
+      if isComplexWord(word):
+          totalComplexWords += 1
+      # Word Count
+      if word in wordDict:
+        wordDict[word] += 1
+      else:
+        wordDict[word] = 1
+
+    positivityRate = positiveWords / totalWords
+    negativityRate = negativeWords / totalWords
+    litigiousRate = litigiousWords / totalWords
+##################
+
+    #Get item 7
+    cleanedlower = cleaned.lower()
+    MDA = itemseven(cleanedlower)
+
+##################
+
+
+
+    # Sentences
+    sentences = sent_tokenize(cleaned)
+    totalSentences = len(sentences)
+
+    # future Sentences
+    futureSentencesList = []
+    for sentence in sentences:
+      if isFuture(sentence):
+        futureSentencesList.append(sentence)
+    totalFutureSentences = len(futureSentencesList)
+
+    # FOG
+    complexWordPercentage = (totalComplexWords / totalWords)
+    averageSentenceLength = (totalWords / totalSentences)
+
+    fog = 0.4 * (averageSentenceLength + 100 * complexWordPercentage)
+
+
+    # future
+    futureTotalWords = 0
+    for sentence in futureSentencesList:
+      cleanWords = re.findall(r"\b[a-z']+\b", sentence.lower())
+      futureTotalWords += len(cleanWords)
+
+      for word in cleanWords:
+
+        # Future word count
+        if word in ['will','shall','may','might','should','going','gonna']:
+          futureWords += 1
+
+        if isComplexWord(word):
+          futureComplexWords += 1
+        if word in PositiveSet:
+          futurePositiveWords += 1
+        if word in NegativeSet:
+          futureNegativeWords += 1
+        if word in LitigiousSet:
+          futureLitigiousWords += 1
+
+    # future rate
+    futurePositivityRate = futurePositiveWords / futureTotalWords
+    futureNegativityRate = futureNegativeWords / futureTotalWords
+    futureLitigiousRate = futureLitigiousWords / futureTotalWords
+
+    # Future FOG
+    futureAverageSentenceLength = futureTotalWords /totalFutureSentences
+    futureComplexWordPercentage = futureComplexWords / futureTotalWords
+
+    futureFog = 0.4 * (futureAverageSentenceLength + 100 * futureComplexWordPercentage)
+
+    results.append({
+        "Filename": file_path.name,
+        "Word_Count": totalWords,
+        "Total_Sentences": totalSentences,
+        "Total_Complex_Words": totalComplexWords,
+        "FOG": fog,
+
+        "Positive_Word_Count": positiveWords,
+        "Negative_Word_Count": negativeWords,
+        "Litigious_Word_Count": litigiousWords,
+        "Positivity_Rate": positivityRate,
+        "Negativity_Rate": negativityRate,
+        "Litigious_Rate": litigiousRate,
+
+
+        #future
+        "Future_Word_Count": futureWords,
+        "Total_Future_Sentences": totalFutureSentences,
+        "Future_Complex_Words": futureComplexWords,
+        "Future_Positive_Word_Count": futurePositiveWords,
+        "Future_Negative_Word_Count": futureNegativeWords,
+        "Future_Litigious_Word_Count": futureLitigiousWords,
+        "Future_Positivity_Rate": futurePositivityRate,
+        "Future_Negativity_Rate": futureNegativityRate,
+        "Future_Litigious_Rate": futureLitigiousRate,
+        "Future_FOG": futureFog,
+
+        #MD&amp;A
+        "MD&amp;A": MDA,
+
+    })
+
+
+
+
+df = pd.DataFrame(results)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py">df.head(50)</code></pre><pre class="nb-out">                       Filename  Word_Count  Total_Sentences  \
+0      10-K_1800_2025-02-21.txt      610404             9444   
+1      10-K_2098_2025-03-06.txt      493576             5948   
+2      10-K_2488_2025-02-05.txt      531128             9556   
+3   10-K_1770787_2025-02-13.txt     1004722            47176   
+4   10-K_1690080_2025-03-31.txt      537206            15011   
+5   10-K_1599407_2025-03-31.txt      635570            15473   
+6     10-K_34782_2025-02-18.txt     1014687            20717   
+7   10-K_1347858_2025-03-20.txt      638631             9783   
+8   10-K_1950976_2025-03-03.txt      610505            10439   
+9   10-K_1860782_2025-03-25.txt      554050            10715   
+10  10-K_1890702_2025-03-07.txt      125982             1151   
+11  10-K_1948175_2025-03-10.txt      106183             1084   
+12   10-K_933972_2025-03-28.txt     1281042            64995   
+… 351 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py"># Pickle the dataframe
+df.to_pickle("/content/drive/MyDrive/26 Fall Text Mining/Week5_df.pkl")</code></pre></div>
+<div class="nb-md"><h4 class="nb-h">Item 7 Analysis</h4></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">MDAresults = []
+
+for text in df["MD&amp;A"]:
+    textList = re.findall(r"\b[a-z']+\b", text.lower())
+
+    totalWords = len(textList)
+    negativeWords = 0
+    negativityRate = 0.0
+    positiveWords = 0
+    positivityRate = 0.0
+    litigiousWords = 0
+    litigiousRate = 0.0
+
+    totalComplexWords = 0
+
+    futureWords = 0
+    futureComplexWords = 0
+    futurePositiveWords = 0
+    futureNegativeWords = 0
+    futureLitigiousWords = 0
+
+    wordDict = {} # {'a', 3495, 'the', 434342 ...}
+
+    for word in textList:
+      if word in NegativeSet:
+        negativeWords += 1
+      if word in PositiveSet:
+        positiveWords += 1
+      if word in LitigiousSet:
+        litigiousWords += 1
+      # Complex Words
+      if isComplexWord(word):
+          totalComplexWords += 1
+      # Word Count
+      if word in wordDict:
+        wordDict[word] += 1
+      else:
+        wordDict[word] = 1
+
+    # Sentences
+    sentences = sent_tokenize(text)
+    totalSentences = len(sentences)
+
+    # future Sentences
+    futureSentencesList = []
+    for sentence in sentences:
+      if isFuture(sentence):
+        futureSentencesList.append(sentence)
+    totalFutureSentences = len(futureSentencesList)
+
+    # Rates
+    if totalWords &gt; 0:
+      positivityRate = positiveWords / totalWords
+      negativityRate = negativeWords / totalWords
+      litigiousRate = litigiousWords / totalWords
+
+      # FOG
+      fog = 0.4 * ((totalWords / totalSentences) + 100 * (totalComplexWords / totalWords))
+    else:
+      positivityRate = None
+      negativityRate = None
+      litigiousRate = None
+      fog = None
+
+
+    # future
+    futureTotalWords = 0
+    for sentence in futureSentencesList:
+      cleanWords = re.findall(r"\b[a-z']+\b", sentence.lower())
+      futureTotalWords += len(cleanWords)
+
+      for word in cleanWords:
+
+        # Future word count
+        if word in ['will','shall','may','might','should','going','gonna']:
+          futureWords += 1
+
+        if isComplexWord(word):
+          futureComplexWords += 1
+        if word in PositiveSet:
+          futurePositiveWords += 1
+        if word in NegativeSet:
+          futureNegativeWords += 1
+        if word in LitigiousSet:
+          futureLitigiousWords += 1
+
+    # future rate
+    if futureTotalWords &gt; 0:
+      futurePositivityRate = futurePositiveWords / futureTotalWords
+      futureNegativityRate = futureNegativeWords / futureTotalWords
+      futureLitigiousRate = futureLitigiousWords / futureTotalWords
+    else:
+      futurePositivityRate = None
+      futureNegativityRate = None
+      futureLitigiousRate = None
+
+    # Future FOG
+    if totalFutureSentences &gt; 0:
+      futureFog = 0.4 * ((futureTotalWords/totalFutureSentences) + 100 * (futureComplexWords / futureTotalWords))
+    else:
+      futureFog = None
+    MDAresults.append({
+
+        "MD&amp;A_Word_Count": totalWords,
+        "MD&amp;A_Total_Sentences": totalSentences,
+        "MD&amp;A_Total_Complex_Words": totalComplexWords,
+        "MD&amp;A_FOG": fog,
+
+        "MD&amp;A_Positive_Word_Count": positiveWords,
+        "MD&amp;A_Negative_Word_Count": negativeWords,
+        "MD&amp;A_Litigious_Word_Count": litigiousWords,
+        "MD&amp;A_Positivity_Rate": positivityRate,
+        "MD&amp;A_Negativity_Rate": negativityRate,
+        "MD&amp;A_Litigious_Rate": litigiousRate,
+
+
+        #future
+        "MD&amp;A_Future_Word_Count": futureWords,
+        "MD&amp;A_Total_Future_Sentences": totalFutureSentences,
+        "MD&amp;A_Future_Complex_Words": futureComplexWords,
+        "MD&amp;A_Future_Positive_Word_Count": futurePositiveWords,
+        "MD&amp;A_Future_Negative_Word_Count": futureNegativeWords,
+        "MD&amp;A_Future_Litigious_Word_Count": futureLitigiousWords,
+        "MD&amp;A_Future_Positivity_Rate": futurePositivityRate,
+        "MD&amp;A_Future_Negativity_Rate": futureNegativityRate,
+        "MD&amp;A_Future_Litigious_Rate": futureLitigiousRate,
+        "MD&amp;A_Future_FOG": futureFog,
+
+    })
+
+df2 = pd.DataFrame(MDAresults)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">df3 = pd.concat([df, df2], axis=1)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[12]</span><pre><code class="py">df3.head(50)</code></pre><pre class="nb-out">                       Filename  Word_Count  Total_Sentences  \
+0      10-K_1800_2025-02-21.txt      610404             9444   
+1      10-K_2098_2025-03-06.txt      493576             5948   
+2      10-K_2488_2025-02-05.txt      531128             9556   
+3   10-K_1770787_2025-02-13.txt     1004722            47176   
+4   10-K_1690080_2025-03-31.txt      537206            15011   
+5   10-K_1599407_2025-03-31.txt      635570            15473   
+6     10-K_34782_2025-02-18.txt     1014687            20717   
+7   10-K_1347858_2025-03-20.txt      638631             9783   
+8   10-K_1950976_2025-03-03.txt      610505            10439   
+9   10-K_1860782_2025-03-25.txt      554050            10715   
+10  10-K_1890702_2025-03-07.txt      125982             1151   
+11  10-K_1948175_2025-03-10.txt      106183             1084   
+12   10-K_933972_2025-03-28.txt     1281042            64995   
+… 403 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[13]</span><pre><code class="py">print(df3.loc[df3.isna().any(axis=1)].iloc[:, 0])</code></pre><pre class="nb-out">10     10-K_1890702_2025-03-07.txt
+11     10-K_1948175_2025-03-10.txt
+32      10-K_715579_2025-03-14.txt
+53      10-K_917251_2025-02-11.txt
+63     10-K_1860782_2025-03-17.txt
+64      10-K_910638_2025-03-17.txt
+65     10-K_1783875_2025-03-31.txt
+72     10-K_1173313_2025-03-31.txt
+77      10-K_786947_2025-03-26.txt
+80     10-K_1938571_2025-03-31.txt
+83     10-K_1368514_2025-03-03.txt
+84     10-K_1744494_2025-03-31.txt
+88     10-K_1775098_2025-03-28.txt
+89      10-K_874761_2025-03-03.txt
+… 5 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[14]</span><pre><code class="py">df3.to_pickle("/content/drive/MyDrive/26 Fall Text Mining/Week5_df_final.pkl")</code></pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w4"><small>Previous</small>← Readability and forward-looking language</button><button type="button" class="next" data-go="p-w6"><small>Next</small>Scraping and structuring 200 earnings calls →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w6" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 6</span><h3>Scraping and structuring 200 earnings calls</h3></div>
+    <p>I crawled ten listing pages of The Motley Fool's earnings call transcripts, collected 200 transcript links, and parsed each page. Every call is split into prepared remarks and Q&amp;A, and every speaker turn is stored with who said it.</p>
+    <div class="methods"><span>requests</span><span>BeautifulSoup</span><span>web scraping</span><span>pandas</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v num">200</div><div class="k">Transcripts from 10 listing pages</div></div>
+      <div class="stat"><div class="v">DF1</div><div class="k">One row per call: ID, company, date, full text</div></div>
+      <div class="stat"><div class="v">DF2</div><div class="k">One row per speaker turn: name, section, text</div></div>
+    </div>
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week 6 Earnings Call Assignment_Chaeree.ipynb · 11 code cells</span></div><div class="nb-md"><p>Automatically go through ten pages of earnings calls…</p>
+<p><a href="https://www.fool.com/earnings-call-transcripts/" target="_blank" rel="noopener">https://www.fool.com/earnings-call-transcripts/</a></p>
+<p><a href="https://www.fool.com/earnings-call-transcripts/page/10/" target="_blank" rel="noopener">https://www.fool.com/earnings-call-transcripts/page/10/</a></p>
+<p>And download the 20 earnings calls on each page.</p>
+<p>For each earnings call:</p>
+<p>Split the call into parts: prepared remarks, and Q&amp;A</p>
+<p>For each part</p>
+<p>Identify the speakers and their text (what they say)</p>
+<p>Store it all in two dataframes</p>
+<p>DF1</p>
+<p>[EarningsCall ID, CompanyName, CallDate, EarningsCallText]</p>
+<p>Each row is an entire earnings call</p>
+<p>DF2</p>
+<p>[SpeakerTurnID(New round unique ID), EarningsCallID,SpeakerName, PreparedOrQA, Text]</p>
+<p>Each row is a speaker turn in a call</p></div>
+<div class="nb-md"><h4 class="nb-h">Class Code</h4></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Mounted at /content/drive</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+pd.set_option('display.max_rows', 2000)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', 1000)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">foolSite = "https://www.fool.com/earnings-call-transcripts/"
+
+callSites = []
+callSites.append(foolSite)
+
+for i in range(9):
+  #print (foolSite + "page/" + str(i+2))
+  callSites.append((foolSite + "page/" + str(i+2)))</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">print(callSites)</code></pre><pre class="nb-out">['https://www.fool.com/earnings-call-transcripts/', 'https://www.fool.com/earnings-call-transcripts/page/2', 'https://www.fool.com/earnings-call-transcripts/pag …</pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py"># Downloading page 1 html
+
+url = callSites[0]
+response = requests.get(url)
+#print(response.text[:1000])
+content = response.text
+
+soup = BeautifulSoup(content, 'html.parser')
+
+# Finding an anchor tag containing the text
+atags = soup.find_all('a', {"class":"text-gray-1100 group hover:no-underline!"})
+#atag = soup.find('a', {"class":"text-gray-1100 group hover:no-underline!"})
+#print ("www.fool.com" + atag.attrs['href'])
+
+print(atags[0].attrs['href'])</code></pre><pre class="nb-out">/earnings/call-transcripts/2026/10/09/delta-dal-q3-2026-earnings-call-transcript/</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py"># raw html of each transcript page
+
+for i in atags:
+  url = "https://www.fool.com" + i.attrs['href']
+  response = requests.get(url)
+  print (response.text[:100])</code></pre><pre class="nb-out">&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+… 6 more lines</pre></div>
+<div class="nb-md"><h4 class="nb-h">Assignment</h4></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py"># 1. Get 200 URLs
+
+URLlist = []
+
+for site in callSites:
+  response = requests.get(site)
+  content = response.text
+  soup = BeautifulSoup(content, 'html.parser')
+
+  atags = soup.find_all('a', {"class":"text-gray-1100 group hover:no-underline!"})
+
+  for i in atags:
+    url = "https://www.fool.com" + i.attrs['href']
+    URLlist.append(url)
+
+#print(len(URLlist))
+print(URLlist[:5])</code></pre><pre class="nb-out">['https://www.fool.com/earnings/call-transcripts/2026/10/13/fb-financial-fbk-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts …</pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py"># for testing
+#URLlist = ['https://www.fool.com/earnings/call-transcripts/2026/10/13/fb-financial-fbk-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/jj-jnj-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/unitedhealth-unh-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/citi-c-q3-2026-earnings-call-transcript/']</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py"># DF1: [EarningsCall ID, CompanyName, CallDate, EarningsCallText]
+# DF2: [SpeakerTurnID(New round unique ID), EarningsCallID,SpeakerName, PreparedOrQA, Text]
+
+
+df1results = []
+df2results = []
+
+for count, url in enumerate(URLlist):
+  response = requests.get(url)
+  soup = BeautifulSoup(response.text, 'html.parser')
+
+  CompanyName = ""
+  CallDate = ""
+  full_transcript = ""
+  speaker_turn_id = 1
+
+  # Call ID
+  CallID = count
+
+  # Company Name
+  h1tag = soup.find('h1', {"class":"leading-relative-2 text-gray-1100 text-3xl font-medium tracking-tight md:text-5xl"})
+  if h1tag:
+    full_title = h1tag.text.strip()
+    CompanyName = full_title.split(')')[0].strip()+')'
+
+  # Call Date
+  datetag = soup.find('h2', id='date')
+  if datetag:
+    CallDate = datetag.find_next('p').text.strip()
+
+  # Whole Transcript
+
+
+
+  transcripttag = soup.find('h2', id='full-conference-call-transcript')
+  if transcripttag:
+    p_tags = transcripttag.find_all_next('p')
+    section = "Prepared"
+    all_paragraphs = []
+
+    for i, p in enumerate(p_tags):
+      p_texts = p.text.strip()
+      all_paragraphs.append(p_texts)
+      strong = p.find('strong')
+
+      if strong:
+        Speaker = strong.text.strip().rstrip(':')
+        text = p_texts.replace(strong.text.strip(), '', 1).strip()
+        df2results.append({
+            "SpeakerTurnID": speaker_turn_id,
+            "EarningsCallID": CallID,
+            "SpeakerName": Speaker,
+            "Section": section,
+            "Text": text
+            })
+        speaker_turn_id += 1
+      else:
+        df2results[-1]["Text"] += "\n" + p_texts
+
+
+      # Section
+      if speaker_turn_id &gt;= 3 and Speaker == "Operator" and "question" in p_texts.lower():
+        section = "QnA"
+        df2results[-1]["Section"] = "QnA"
+      elif i&gt;1 and "question" in p_texts.lower() and "first" in p_texts.lower():
+        section = "QnA"
+        df2results[-1]["Section"] = "QnA"
+    #full text for df1
+    full_transcript = "\n\n".join(all_paragraphs)
+
+
+
+  df1results.append({
+        "EarningCall ID": CallID,
+        "CompanyName": CompanyName,
+        "CallDate": CallDate,
+        "EarningsCallText": full_transcript
+        })
+
+
+
+df1 = pd.DataFrame(df1results)
+df2 = pd.DataFrame(df2results)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">df1.head(20)</code></pre><pre class="nb-out">    EarningCall ID                    CompanyName                CallDate                                   EarningsCallText
+0                0             FB Financial (FBK)  Tuesday, Oct. 13, 2026  Operator: Good morning, and welcome to the FB ...
+1                1                      J&amp;J (JNJ)  Tuesday, Oct. 13, 2026  Operator: Good morning, and welcome to Johnson...
+2                2               Albertsons (ACI)       Tue, Oct 13, 2026  Operator: Greetings. Welcome to the Albertsons...
+3                3             UnitedHealth (UNH)  Tuesday, Oct. 13, 2026  Operator: Good morning, and welcome to the Uni...
+4                4                       Citi (C)           Oct. 13, 2026  Operator: Hello, and welcome to Citi's Third Q...
+5                5             Goldman Sachs (GS)  Tuesday, Oct. 13, 2026  Operator: Good morning. My name is Katie, and ...
+6                6                 Domino's (DPZ)  Tuesday, Oct. 13, 2026  Operator: Good day, and thank you for standing...
+7                7           JPMorgan Chase (JPM)  Tuesday, Oct. 13, 2026  Operator: Good morning, ladies and gentlemen. ...
+8                8                  Leifras (LFS)  Thursday, Oct. 8, 2026  Operator: Good morning, and thank you for join...
+9                9                    Delta (DAL)    Friday, Oct. 9, 2026  Operator: Good morning, everyone, and welcome ...
+10              10    New Horizon Aircraft (HOVR)       Fri, Oct. 9, 2026  Operator: Ladies and gentlemen, thank you for ...
+11              11                  Oil-Dri (ODC)    Friday, Oct. 9, 2026  Operator: Good day, and thank you for standing...
+12              12           Helen of Troy (HELE)  Thursday, Oct. 8, 2026  Operator: Greetings, and welcome to Helen of T...
+… 7 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">df2.head(1300)</code></pre><pre class="nb-out">      SpeakerTurnID  EarningsCallID                  SpeakerName   Section                                               Text
+0                 1               0                     Operator  Prepared  Good morning, and welcome to the FB Financial ...
+1                 2               0        Christopher T. Holmes  Prepared  Thank you, and good morning, everyone. We appr...
+2                 3               0               Michael Mettee  Prepared  Thank you, Christopher and good morning everyo...
+3                 4               0        Christopher T. Holmes  Prepared  All right. Thanks for the color, Michael. And ...
+4                 5               0                     Operator       QnA  At this time, we will begin that question and ...
+5                 6               0              Russell Gunther       QnA                    Hey, Brent. Good morning, guys.
+6                 7               0        Christopher T. Holmes       QnA                          So Good morning, Russell.
+7                 8               0              Russell Gunther       QnA  Good morning, Christopher. On the loan growth ...
+8                 9               0        Christopher T. Holmes       QnA  Yeah. We will tag team this 1. Yeah. You are r...
+9                10               0               Michael Mettee       QnA  Yes. Good morning, Russell. So, actually, I wo...
+10               11               0              Russell Gunther       QnA  I appreciate, both your thoughts there, guys. ...
+11               12               0               Michael Mettee       QnA  So the rate increase, right, was I think, 13 d...
+12               13               0              Russell Gunther       QnA  Understood. Okay. Brent. Thank you guys for ta...
+… 1287 more lines</pre></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w5"><small>Previous</small>← Pulling out MD&amp;A with regular expressions</button><button type="button" class="next" data-go="p-w9"><small>Next</small>Naive Bayes: is this sentence scripted or spontaneous? →</button></nav>
+</main>
+
+<main class="wrap page" data-view="p-w9" hidden>
+<button class="back" type="button" data-go="projects">← All projects</button>
+<article class="project" >
+    <div class="head"><span class="week">Week 9</span><h3>Naive Bayes: is this sentence scripted or spontaneous?</h3></div>
+    <p>Executives read prepared remarks from a script, then answer analysts' questions live. Can a model tell the two apart from a single sentence? I labeled each turn as prepared remarks, analyst question, management response, operator, or moderator, kept only prepared remarks and management responses, and trained a multinomial Naive Bayes classifier from scratch with Laplace smoothing. To keep the test honest, the train/test split is by call, so the same executive's phrasing never appears on both sides.</p>
+    <div class="methods"><span>Naive Bayes</span><span>Laplace smoothing</span><span>log-probabilities</span><span>JavaScript web app</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v">89.9%</div><div class="k">Accuracy on 39 held-out calls</div></div>
+      <div class="stat"><div class="v">57.1%</div><div class="k">Baseline: always guess the majority class</div></div>
+      <div class="stat"><div class="v num">62,821</div><div class="k">Sentences from 196 calls</div></div>
+      <div class="stat"><div class="v num">16,072</div><div class="k">Words in the vocabulary</div></div>
+    </div>
+
+    <div class="grid2">
+      <figure>
+        <div class="scroll"><table class="matrix">
+          <tr><th></th><th>Predicted Prepared</th><th>Predicted Q&amp;A</th></tr>
+          <tr><th>Actual Prepared</th><td class="hit num">5,314</td><td class="num">559</td></tr>
+          <tr><th>Actual Q&amp;A</th><td class="num">819</td><td class="hit num">6,998</td></tr>
+        </table></div>
+        <figcaption>Confusion matrix on 13,690 test sentences.</figcaption>
+      </figure>
+      <figure>
+        <div class="words">
+          <div class="p"><span class="eyebrow">Says "prepared"</span><ol><li>uncertainties</li><li>statements</li><li>reconciliations</li><li>expenditures</li><li>diluted</li><li>gaap</li><li>webcast</li><li>filings</li><li>approximately</li></ol></div>
+          <div class="q"><span class="eyebrow">Says "Q&amp;A"</span><ol><li>yeah</li><li>sort</li><li>somewhere</li><li>probably</li><li>stuff</li><li>gonna</li><li>frankly</li><li>kinda</li><li>obviously</li></ol></div>
+        </div>
+        <figcaption>Words with the largest log-probability ratio between classes (seen 20+ times).</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <div class="sent" id="nb-1"></div>
+      <div class="sent" id="nb-2"></div>
+      <figcaption>Each word's contribution, log P(word | Prepared) − log P(word | Q&amp;A). <span style="color:var(--fut)">Blue</span> leans prepared, <span style="color:var(--neg)">red</span> leans Q&amp;A, and darker means stronger.</figcaption>
+    </figure>
+
+    <a class="cta" href="https://co467.github.io/earnings-call-classifier/" target="_blank" rel="noopener">Try the live classifier ↗</a>
+
+    <section class="notebook" aria-label="Notebook"><div class="nb-head"><h4>Full notebook</h4><span class="mono muted">Week 9 Naive Bayes.ipynb · 21 code cells</span></div><div class="nb-md"><p>Create a webpage - make it cool</p>
+<p>Enter a new sentence - it should be classified as either coming from prepared remarks, or Q&amp;A</p>
+<p>Use only responses to questions in your Q&amp;A model</p>
+<p>Build the naive bayes model</p>
+<p>Show the naive bayes scores, etc…</p></div>
+<div class="nb-md"><h4 class="nb-h">Class Code</h4></div>
+<div class="nb-cell"><span class="nb-n">[1]</span><pre><code class="py">from google.colab import drive
+drive.mount('/content/drive')</code></pre><pre class="nb-out">Mounted at /content/drive</pre></div>
+<div class="nb-cell"><span class="nb-n">[2]</span><pre><code class="py">import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import re
+from collections import Counter
+import math
+
+pd.set_option('display.max_rows', 2000)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', 1000)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[3]</span><pre><code class="py">foolSite = "https://www.fool.com/earnings-call-transcripts/"
+
+callSites = []
+callSites.append(foolSite)
+
+for i in range(9):
+  #print (foolSite + "page/" + str(i+2))
+  callSites.append((foolSite + "page/" + str(i+2)))</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[4]</span><pre><code class="py">print(callSites)</code></pre><pre class="nb-out">['https://www.fool.com/earnings-call-transcripts/', 'https://www.fool.com/earnings-call-transcripts/page/2', 'https://www.fool.com/earnings-call-transcripts/pag …</pre></div>
+<div class="nb-cell"><span class="nb-n">[5]</span><pre><code class="py"># Downloading page 1 html
+
+url = callSites[0]
+response = requests.get(url)
+#print(response.text[:1000])
+content = response.text
+
+soup = BeautifulSoup(content, 'html.parser')
+
+# Finding an anchor tag containing the text
+atags = soup.find_all('a', {"class":"text-gray-1100 group hover:no-underline!"})
+#atag = soup.find('a', {"class":"text-gray-1100 group hover:no-underline!"})
+#print ("www.fool.com" + atag.attrs['href'])
+
+print(atags[0].attrs['href'])</code></pre><pre class="nb-out">/earnings/call-transcripts/2026/10/28/oge-energy-oge-q3-2026-earnings-call-transcript/</pre></div>
+<div class="nb-cell"><span class="nb-n">[6]</span><pre><code class="py"># raw html of each transcript page
+
+for i in atags:
+  url = "https://www.fool.com" + i.attrs['href']
+  response = requests.get(url)
+  print (response.text[:100])</code></pre><pre class="nb-out">&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+&lt;!DOCTYPE html&gt;&lt;html lang="en" class="__className_319f37 __variable_c44347"&gt;&lt;head&gt;&lt;meta charSet="utf
+… 6 more lines</pre></div>
+<div class="nb-md"><h4 class="nb-h">Assignment</h4></div>
+<div class="nb-cell"><span class="nb-n">[7]</span><pre><code class="py"># 1. Get 200 URLs
+
+URLlist = []
+
+for site in callSites:
+  response = requests.get(site)
+  content = response.text
+  soup = BeautifulSoup(content, 'html.parser')
+
+  atags = soup.find_all('a', {"class":"text-gray-1100 group hover:no-underline!"})
+
+  for i in atags:
+    url = "https://www.fool.com" + i.attrs['href']
+    URLlist.append(url)
+
+#print(len(URLlist))
+print(URLlist[:5])</code></pre><pre class="nb-out">['https://www.fool.com/earnings/call-transcripts/2026/10/28/oge-energy-oge-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2 …</pre></div>
+<div class="nb-cell"><span class="nb-n">[8]</span><pre><code class="py"># for testing
+#URLlist = ['https://www.fool.com/earnings/call-transcripts/2026/10/13/fb-financial-fbk-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/jj-jnj-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/unitedhealth-unh-q3-2026-earnings-call-transcript/', 'https://www.fool.com/earnings/call-transcripts/2026/10/13/citi-c-q3-2026-earnings-call-transcript/']</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[9]</span><pre><code class="py"># DF1: [EarningsCall ID, CompanyName, CallDate, EarningsCallText]
+# DF2: [SpeakerTurnID(New round unique ID), EarningsCallID,SpeakerName, PreparedOrQA, Text]
+
+FOOTER_START = "this article is a transcript of this conference call"
+
+QA_CUES = re.compile(
+    r"question[- ]and[- ]answer"
+    r"|q\s?&amp;\s?a"
+    r"|first question"
+    r"|operator instructions"
+    r"|open (up )?the (line|lines|floor|call) (up )?(for|to) (your )?questions"
+    r"|(begin|start|take|conduct)\w* (the |our |a )?question"
+    r"|ready to take questions",
+    re.IGNORECASE,
+)
+# Phrases that mention Q&amp;A but say there is none (e.g. Hain Celestial)
+NO_QA = re.compile(r"\b(not|no)\b[^.]{0,40}\b(q\s?&amp;\s?a|questions?)\b", re.IGNORECASE)
+
+def find_qa_start(turns):
+    """Return the index of the first Q&amp;A turn, or None if the call has no Q&amp;A.
+
+    1. Prefer the first Operator turn (after the opening) that announces Q&amp;A.
+       This avoids switching early when an executive says something like
+       "before we move to questions" at the end of the prepared remarks.
+    2. If the operator never announces it (calls moderated by an IR person),
+       fall back to the first turn by anyone that announces Q&amp;A.
+    """
+    for i, t in enumerate(turns):
+        if i &gt;= 1 and t["SpeakerName"] == "Operator" and QA_CUES.search(t["Text"]) \
+                and not NO_QA.search(t["Text"]):
+            return i
+    for i, t in enumerate(turns):
+        if i &gt;= 2 and QA_CUES.search(t["Text"]) and not NO_QA.search(t["Text"]):
+            return i
+    return None</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[10]</span><pre><code class="py">df1results = []
+df2results = []
+
+for count, url in enumerate(URLlist):
+  response = requests.get(url)
+  soup = BeautifulSoup(response.text, 'html.parser')
+
+  CompanyName = ""
+  CallDate = ""
+  full_transcript = ""
+
+  # Call ID
+  CallID = count
+
+  # Company Name
+  h1tag = soup.find('h1', {"class":"leading-relative-2 text-gray-1100 text-3xl font-medium tracking-tight md:text-5xl"})
+  if h1tag:
+    full_title = h1tag.text.strip()
+    CompanyName = full_title.split(')')[0].strip()+')'
+
+  # Call Date
+  datetag = soup.find('h2', id='date')
+  if datetag:
+    CallDate = datetag.find_next('p').text.strip()
+
+  # Whole Transcript
+  transcripttag = soup.find('h2', id='full-conference-call-transcript')
+  if transcripttag:
+    p_tags = transcripttag.find_all_next('p')
+    all_paragraphs = []
+    turns = []          # speaker turns for this call only
+
+    for p in p_tags:
+      p_texts = p.text.strip()
+
+      if p_texts.lower().startswith(FOOTER_START):
+        break
+      if not p_texts:
+        continue
+
+      all_paragraphs.append(p_texts)
+      strong = p.find('strong')
+
+      if strong:
+        Speaker = strong.text.strip().rstrip(':')
+        text = p_texts.replace(strong.text.strip(), '', 1).strip()
+        turns.append({"SpeakerName": Speaker, "Text": text})
+      elif turns:
+        # continuation paragraph of the current speaker
+        turns[-1]["Text"] += "\n" + p_texts
+
+    qa_start = find_qa_start(turns)
+
+    for idx, t in enumerate(turns):
+      section = "QnA" if (qa_start is not None and idx &gt;= qa_start) else "Prepared"
+      df2results.append({
+          "SpeakerTurnID": idx + 1,
+          "EarningsCallID": CallID,
+          "SpeakerName": t["SpeakerName"],
+          "Section": section,
+          "Text": t["Text"]
+          })
+
+    #full text for df1
+    full_transcript = "\n\n".join(all_paragraphs)
+
+  df1results.append({
+        "EarningCall ID": CallID,
+        "CompanyName": CompanyName,
+        "CallDate": CallDate,
+        "EarningsCallText": full_transcript
+        })
+
+
+df1 = pd.DataFrame(df1results)
+df2 = pd.DataFrame(df2results)</code></pre></div>
+<div class="nb-cell"><span class="nb-n">[11]</span><pre><code class="py">df1.head(20)</code></pre><pre class="nb-out">    EarningCall ID                     CompanyName                  CallDate                                   EarningsCallText
+0                0                OGE Energy (OGE)  Wednesday, Oct. 28, 2026  Operator: Good day, and thank you for standing...
+1                1                        VF (VFC)  Wednesday, Oct. 28, 2026  Operator: Ladies and gentlemen, thank you for ...
+2                2                  SiteOne (SITE)         Wed, Oct 28, 2026  Operator: Greetings, and welcome to the SiteOn...
+3                3                  Generac (GNRC)  Wednesday, Oct. 28, 2026  Operator: Hello, and welcome to Generac Holdin...
+4                4           TE Connectivity (TEL)             Oct. 28, 2026  Operator: Everyone, thank you for standing by,...
+5                5                     Otis (OTIS)  Wednesday, Oct. 28, 2026  Operator: Good morning and welcome to Otis' Th...
+6                6                   Biogen (BIIB)  Wednesday, Oct. 28, 2026  Operator: Please stand by. Good morning. My na...
+7                7                     STAG (STAG)  Wednesday, Oct. 28, 2026  Operator: Greetings. Welcome to the STAG Indus...
+8                8         Artisan Partners (APAM)        Wed, Oct. 28, 2026  Operator: Welcome to the Artisan Partners Asse...
+9                9                FirstEnergy (FE)  Wednesday, Oct. 28, 2026  Operator: Hello, and welcome to FirstEnergy Co...
+10              10                      Crane (CR)  Wednesday, Oct. 28, 2026  Operator: Welcome to The Crane Company Third Q...
+11              11                 Renasant (RNST)        Wed, Oct. 28, 2026  Operator: Good day, and welcome to the Renasan...
+12              12  First Financial Bancorp (FFBC)  Wednesday, Oct. 28, 2026  Operator: Hello, everyone. Thank you for joini...
+… 7 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[12]</span><pre><code class="py">df2.head(1300)</code></pre><pre class="nb-out">      SpeakerTurnID  EarningsCallID                SpeakerName   Section                                               Text
+0                 1               0                   Operator  Prepared  Good day, and thank you for standing by. Welco...
+1                 2               0              Casey Strange  Prepared  Thank you, Lisa, and good morning everyone, an...
+2                 3               0             Sean Trauschke  Prepared  Thank you, Casey. Good morning, everyone. Than...
+3                 4               0             Chuck Walworth  Prepared  Thank you, Sean, and thank you, Casey. Good mo...
+4                 5               0                   Operator       QnA  Thank you. If you would like to ask a question...
+5                 6               0                Aidan Kelly       QnA  Hey, guys. Good morning. Thanks for the time t...
+6                 7               0             Sean Trauschke       QnA                                 Hey, good morning.
+7                 8               0                Aidan Kelly       QnA  Yeah, good morning. Just maybe want to follow ...
+8                 9               0             Sean Trauschke       QnA  Yeah. Thanks for the question, Aidan. I think ...
+9                10               0                Aidan Kelly       QnA  Great. Appreciate that. Then just going to the...
+10               11               0             Chuck Walworth       QnA  Yeah, Aidan, great question. This is Chuck. Re...
+11               12               0                Aidan Kelly       QnA  Great. Thanks, Chuck. I'll leave it there. See...
+12               13               0                   Operator       QnA  Thank you. One moment for the next question. O...
+… 1287 more lines</pre></div>
+<div class="nb-md"><h4 class="nb-h">Assignment</h4></div>
+<div class="nb-cell"><span class="nb-n">[13]</span><pre><code class="py"># 2. Keep only Prepared remarks and management RESPONSES in Q&amp;A
+#    - drop all Operator turns
+#    - analyst = the speaker right after an Operator turn in Q&amp;A who did not
+#      speak in the prepared remarks (so a CEO giving closing remarks after
+#      the operator is not mistaken for an analyst); drop all their turns
+#    - drop "question routing" turns from IR moderators (e.g. Oil-Dri, New Horizon)
+#    - drop closing remarks after the operator ends the Q&amp;A (not answers to questions)
+import re
+
+CLOSING = re.compile(
+    r"no (further|more|additional) questions"
+    r"|(concludes|conclude|end of|ending|wrap up)\w* (our|the|today's|this)?\s*(question|q\s?&amp;\s?a)"
+    r"|(turn|hand)\w* (the call|it|the floor|the conference|things) (over )?back (over )?to",  # needs "back"
+    re.IGNORECASE)
+
+ROUTING = re.compile(
+    r"\b(next|first|final|last|another|following)\s+(analyst\s+)?question\b"
+    r"|\bquestion\s+(comes|is coming|is|has come)\s+from\b"
+    r"|\bquestions?\s+from\s+(the line of|reddit)\b",
+    re.IGNORECASE)
+
+def assign_roles(call):
+    call = call.sort_values("SpeakerTurnID")
+    prepared_speakers = set(call.loc[call.Section == "Prepared", "SpeakerName"]) - {"Operator"}
+
+    # find analysts for this call
+    analysts = set()
+    prev = None
+    for _, r in call.iterrows():
+        if (r.Section == "QnA" and prev == "Operator"
+                and r.SpeakerName != "Operator"
+                and r.SpeakerName not in prepared_speakers):
+            analysts.add(r.SpeakerName)
+        prev = r.SpeakerName
+
+    roles = []
+    qa_over = False
+    for _, r in call.iterrows():
+        if r.SpeakerName == "Operator":
+            roles.append("Operator")
+            if r.Section == "QnA" and CLOSING.search(r.Text):
+                qa_over = True
+        elif r.Section == "QnA" and qa_over:
+            roles.append("Closing")
+        elif r.Section == "Prepared":
+            roles.append("Prepared")
+        elif r.SpeakerName in analysts:
+            roles.append("Analyst")
+        elif ROUTING.search(r.Text):
+            roles.append("Moderator")
+        else:
+            roles.append("Response")
+    return pd.Series(roles, index=call.index)
+
+df2["Role"] = df2.groupby("EarningsCallID", group_keys=False).apply(assign_roles)
+
+print(df2["Role"].value_counts())</code></pre><pre class="nb-out">Role
+Response     4255
+Analyst      3432
+Operator     2118
+Prepared      810
+Moderator     186
+Closing       146
+Name: count, dtype: int64
+/tmp/ipykernel_1212/1196946832.py:55: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future  …
+  df2["Role"] = df2.groupby("EarningsCallID", group_keys=False).apply(assign_roles)</pre></div>
+<div class="nb-cell"><span class="nb-n">[14]</span><pre><code class="py"># Spot-check the roles for one call (change the ID to look at others: 2 = Albertsons, 11 = Oil-Dri, 10 = New Horizon, 8 = Leifras)
+check_id = 2
+df2.loc[df2.EarningsCallID == check_id, ["SpeakerTurnID", "SpeakerName", "Section", "Role", "Text"]] \
+   .assign(Text=lambda d: d.Text.str[:90])</code></pre><pre class="nb-out">     SpeakerTurnID           SpeakerName   Section      Role                                               Text
+127              1              Operator  Prepared  Operator  Greetings, and welcome to the SiteOne Landscap...
+128              2            Eric Elema  Prepared  Prepared  Thank you, and good morning, everyone. We issu...
+129              3            Doug Black  Prepared  Prepared  Thanks, Eric. Good morning and thank you all f...
+130              4            Eric Elema  Prepared  Prepared  Thanks, Doug. I will begin on Slide 9 with som...
+131              5       Daniel Laughlin  Prepared  Prepared  Thanks, Eric. As shown on slide 12, we complet...
+132              6            Doug Black  Prepared  Prepared  Thanks, Daniel. I will wrap up on Slide 14. We...
+133              7              Operator       QnA  Operator  Thank you. We will now be conducting a questio...
+134              8         David Manthey       QnA   Analyst  Thank you and good morning everyone. First of ...
+135              9            Doug Black       QnA  Response  Yes. Good question, David. You know, we are al...
+136             10         David Manthey       QnA   Analyst  Great. Thanks, Doug. that is helpful. And then...
+137             11       Daniel Laughlin       QnA  Response  No, David. This is Daniel. I think it is consi...
+138             12         David Manthey       QnA   Analyst  that is great. Alright, guys. Thank you. Thank...
+139             13              Operator       QnA  Operator  Our next question comes from Ryan Merkel with ...
+… 56 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[15]</span><pre><code class="py">## Step 2: Sentence-level training data and a train/test split by call
+
+# Training data: one row per SENTENCE (the webpage classifies a single sentence)
+#   label "Prepared" = Prepared role,  label "QnA" = Response role
+def split_sentences(text):
+    return [s.strip() for s in re.split(r"(?&lt;=[.!?])\s+", text) if s.strip()]
+
+def tokenize(text):
+    return re.findall(r"[a-z']+", text.lower())
+
+MIN_WORDS = 5   # skip tiny fragments like "Thanks, Jeremy."
+
+rows = []
+for _, r in df2[df2.Role.isin(["Prepared", "Response"])].iterrows():
+    label = "Prepared" if r.Role == "Prepared" else "QnA"
+    for s in split_sentences(r.Text):
+        if len(tokenize(s)) &gt;= MIN_WORDS:
+            rows.append({"EarningsCallID": r.EarningsCallID, "Label": label, "Sentence": s})
+
+sent_df = pd.DataFrame(rows)
+print(sent_df.Label.value_counts())
+
+# 3. Train/test split BY CALL so the same executive's phrasing isn't on both sides
+import random
+call_ids = sorted(sent_df.EarningsCallID.unique())
+random.seed(42)
+random.shuffle(call_ids)
+n_test = round(len(call_ids) * 0.2)
+test_ids = set(call_ids[:n_test])
+
+train_df = sent_df[~sent_df.EarningsCallID.isin(test_ids)]
+test_df  = sent_df[ sent_df.EarningsCallID.isin(test_ids)]
+print(f"train calls: {len(call_ids) - n_test}, test calls: {n_test}")
+print(f"train sentences: {len(train_df)}, test sentences: {len(test_df)}")</code></pre><pre class="nb-out">Label
+QnA         34880
+Prepared    27941
+Name: count, dtype: int64
+train calls: 157, test calls: 39
+train sentences: 49131, test sentences: 13690</pre></div>
+<div class="nb-cell"><span class="nb-n">[16]</span><pre><code class="py">## Step 3: Naive Bayes model (multinomial, Laplace smoothing, with class priors)
+CLASSES = ["Prepared", "QnA"]
+
+def train_nb(df):
+    counts = {c: Counter() for c in CLASSES}
+    n_docs = Counter(df.Label)
+    for _, r in df.iterrows():
+        counts[r.Label].update(tokenize(r.Sentence))
+
+    vocab = set(counts["Prepared"]) | set(counts["QnA"])
+    V = len(vocab)
+    model = {"V": V, "prior": {}, "logprob": {}, "unseen": {}, "total_words": {}}
+    for c in CLASSES:
+        N = sum(counts[c].values())
+        model["prior"][c] = math.log(n_docs[c] / len(df))
+        model["unseen"][c] = math.log(1 / (N + V))          # word in vocab but never seen in this class
+        model["logprob"][c] = {w: math.log((counts[c][w] + 1) / (N + V)) for w in vocab}
+        model["total_words"][c] = N
+    model["counts"] = counts
+    return model
+
+def score_sentence(model, sentence):
+    """Returns the score for each class and each word's contribution."""
+    scores = {c: model["prior"][c] for c in CLASSES}
+    words = []
+    for w in tokenize(sentence):
+        if w not in model["logprob"]["Prepared"]:
+            words.append((w, None))        # not in vocabulary: ignored (same for both classes)
+            continue
+        for c in CLASSES:
+            scores[c] += model["logprob"][c][w]
+        words.append((w, model["logprob"]["Prepared"][w] - model["logprob"]["QnA"][w]))
+    pred = max(scores, key=scores.get)
+    return pred, scores, words
+
+nb = train_nb(train_df)
+print("Vocabulary size:", nb["V"])
+print("Log priors:", {c: round(p, 4) for c, p in nb["prior"].items()})</code></pre><pre class="nb-out">Vocabulary size: 16072
+Log priors: {'Prepared': -0.8004, 'QnA': -0.5963}</pre></div>
+<div class="nb-cell"><span class="nb-n">[17]</span><pre><code class="py"># Step 4: Evaluate on the held-out calls
+test_preds = [score_sentence(nb, s)[0] for s in test_df.Sentence]
+test_df = test_df.assign(Pred=test_preds)
+
+accuracy = (test_df.Pred == test_df.Label).mean()
+print(f"Test accuracy: {accuracy:.3f}")
+print(f"Baseline (always guess the majority class): {test_df.Label.value_counts(normalize=True).max():.3f}\n")
+print(pd.crosstab(test_df.Label, test_df.Pred, rownames=["Actual"], colnames=["Predicted"]))</code></pre><pre class="nb-out">Test accuracy: 0.899
+Baseline (always guess the majority class): 0.571
+
+Predicted  Prepared   QnA
+Actual                   
+Prepared       5314   559
+QnA             819  6998</pre></div>
+<div class="nb-cell"><span class="nb-n">[18]</span><pre><code class="py"># Most telling words for each class (log P(w|Prepared) - log P(w|QnA)), words seen at least 20 times
+MIN_COUNT = 20
+ratios = []
+for w in nb["logprob"]["Prepared"]:
+    total = nb["counts"]["Prepared"][w] + nb["counts"]["QnA"][w]
+    if total &gt;= MIN_COUNT:
+        ratios.append((w, nb["logprob"]["Prepared"][w] - nb["logprob"]["QnA"][w], total))
+ratio_df = pd.DataFrame(ratios, columns=["Word", "LogRatio", "Count"]).sort_values("LogRatio")
+
+print("Top Prepared words:")
+print(ratio_df[ratio_df.LogRatio &gt; 0].tail(20).iloc[::-1].to_string(index=False))
+print("\nTop Q&amp;A words:")
+print(ratio_df[ratio_df.LogRatio &lt; 0].head(20).to_string(index=False))</code></pre><pre class="nb-out">Top Prepared words:
+           Word  LogRatio  Count
+  uncertainties  4.905855    113
+     statements  4.541633    399
+reconciliations  4.101482     50
+           vice  4.081680     49
+   expenditures  3.953846     43
+          chief  3.921511    216
+        diluted  3.919161    172
+      president  3.800642    153
+        officer  3.720232    213
+           gaap  3.642067    463
+        marking  3.570854     29
+      celestica  3.570854     29
+… 31 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[19]</span><pre><code class="py"># Try a new sentence and show the Naive Bayes scores
+def classify(sentence):
+    pred, scores, words = score_sentence(nb, sentence)
+    print(f"Sentence: {sentence}")
+    for c in CLASSES:
+        print(f"  {c:9s} score (log): {scores[c]:.3f}")
+    print(f"  Prediction: {pred}  (margin {abs(scores['Prepared'] - scores['QnA']):.3f})")
+    print("  Word contributions (+ leans Prepared, - leans Q&amp;A):")
+    for w, contrib in words:
+        print(f"    {w:15s} {'not in vocab' if contrib is None else f'{contrib:+.3f}'}")
+
+classify("Revenue for the third quarter increased 12% year-over-year to $4.2 billion.")
+print()
+classify("Yeah, I think that's a great question, and you know, we're kind of seeing that too.")</code></pre><pre class="nb-out">Sentence: Revenue for the third quarter increased 12% year-over-year to $4.2 billion.
+  Prepared  score (log): -54.960
+  QnA       score (log): -65.076
+  Prediction: Prepared  (margin 10.116)
+  Word contributions (+ leans Prepared, - leans Q&amp;A):
+    revenue         +1.283
+    for             +0.180
+    the             -0.089
+    third           +1.642
+    quarter         +1.119
+    increased       +2.187
+    year            +0.744
+    over            +0.885
+    year            +0.744
+… 24 more lines</pre></div>
+<div class="nb-cell"><span class="nb-n">[20]</span><pre><code class="py">classify("That said, DTC performance in the quarter fell short of our expectations, driven primarily by softer traffic trends in both the U.S. and Europe.")</code></pre><pre class="nb-out">Sentence: That said, DTC performance in the quarter fell short of our expectations, driven primarily by softer traffic trends in both the U.S. and Europe.
+  Prepared  score (log): -161.980
+  QnA       score (log): -170.640
+  Prediction: Prepared  (margin 8.660)
+  Word contributions (+ leans Prepared, - leans Q&amp;A):
+    that            -1.312
+    said            -1.726
+    dtc             -0.167
+    performance     +1.292
+    in              +0.082
+    the             -0.089
+    quarter         +1.119
+    fell            +0.789
+    short           -0.652
+… 16 more lines</pre></div>
+<div class="nb-md"><h4 class="nb-h">Step 5: Export the model for the webpage</h4></div>
+<div class="nb-cell"><span class="nb-n">[21]</span><pre><code class="py">import json
+
+# retrain on ALL calls for the final model the webpage will use
+nb_full = train_nb(sent_df)
+
+export = {
+    "classes": CLASSES,
+    "prior": nb_full["prior"],
+    "unseen": nb_full["unseen"],
+    "logprob": {c: {w: round(lp, 4) for w, lp in nb_full["logprob"][c].items()} for c in CLASSES},
+    "stats": {
+        "calls": int(sent_df.EarningsCallID.nunique()),
+        "sentences": {c: int((sent_df.Label == c).sum()) for c in CLASSES},
+        "vocab_size": nb_full["V"],
+        "test_accuracy": round(float(accuracy), 4),
+    },
+    "top_words": {
+        "Prepared": ratio_df[ratio_df.LogRatio &gt; 0].tail(25).iloc[::-1].Word.tolist(),
+        "QnA": ratio_df[ratio_df.LogRatio &lt; 0].head(25).Word.tolist(),
+    },
+}
+
+with open("nb_model.json", "w") as f:
+    json.dump(export, f)
+print("Saved nb_model.json,", round(len(json.dumps(export)) / 1e6, 2), "MB")
+
+from google.colab import files
+files.download("nb_model.json")</code></pre><pre class="nb-out">Saved nb_model.json, 0.77 MB</pre></div>
+<div class="nb-md"><p><a href="https://co467.github.io/earnings-call-classifier/" target="_blank" rel="noopener">https://co467.github.io/earnings-call-classifier/</a></p></div></section>
+  </article>
+<nav class="pager" aria-label="More projects"><button type="button" data-go="p-w6"><small>Previous</small>← Scraping and structuring 200 earnings calls</button></nav>
+</main>
+
+<footer><div class="wrap">© 2026 Chaeree Oh · Rutgers University – Newark</div></footer>
+
+<script>
+/* ---------- Page switching ---------- */
+const VIEWS=[...document.querySelectorAll("[data-view]")].map(v=>v.dataset.view);
+const MENU=document.getElementById("menu");
+function show(name){
+  if(!VIEWS.includes(name)) name="home";
+  document.querySelectorAll("[data-view]").forEach(v=>{v.hidden=v.dataset.view!==name;});
+  const top=name.startsWith("p-")?"projects":name;
+  document.querySelectorAll(".menu-list [data-go]").forEach(b=>b.setAttribute("aria-current",b.dataset.go===top?"page":"false"));
+  document.querySelector("footer").hidden=name==="home";
+  window.scrollTo(0,0);
+}
+function go(name){
+  show(name);
+  MENU.classList.remove("open");
+  if(document.activeElement) document.activeElement.blur();
+  try{ if(location.hash.slice(1)!==name) history.replaceState(null,"","#"+name); }catch(e){}
+}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-go]");
+  if(t){e.preventDefault();go(t.dataset.go);return;}
+  if(!e.target.closest("#menu")) MENU.classList.remove("open");
+});
+document.getElementById("menu-btn").addEventListener("click",e=>{e.stopPropagation();MENU.classList.toggle("open");});
+window.addEventListener("hashchange",()=>show(location.hash.slice(1)));
+let start="home"; try{start=location.hash.slice(1)||"home";}catch(e){}
+show(start);
+
+
+/* ---------- Python highlighting (tiny) ---------- */
+document.querySelectorAll("code.py").forEach(el=>{
+  const lines=el.innerHTML.split("\n").map(line=>{
+    let code=line, com="";
+    const m=line.match(/^((?:[^"'#]|"[^"]*"|'[^']*')*)(#.*)$/);
+    if(m){code=m[1];com=m[2];}
+    code=code.replace(/("[^"]*"|'[^']*')|\b(def|class|for|in|if|elif|else|return|import|from|as|with|not|and|or|lambda|pass|break|True|False|None)\b|\b(\d+(?:\.\d+)?)\b/g,
+      (s,str,kw,num)=>str?`<span class="s">${str}</span>`:kw?`<span class="k">${kw}</span>`:`<span class="n">${num}</span>`);
+    return code+(com?`<span class="c">${com}</span>`:"");
+  });
+  el.innerHTML=lines.join("\n");
+});
+
+/* ---------- Week 1: handwriting digits ---------- */
+const DIGITS=[{"t":2,"p":5,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000016700000000000000000000000005131000000000000000000000000203300000000000000000000000000230000000000000000000000000023000000000000000000000000003300000000000000000000000000510000000000000000000000000060000000000000000000000000024000000000000000000000000006000000000000000000000000002300000000000000000000000001955531000000000000000000000231113561000000000000000000000000001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":7,"p":7,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000064345671000000000000000000019443217200000000000000000004400000610000000000000000000810000070000000000000000000030000007000000000000000000000000001600000000000000000000000000250000000000000000000000000044000000000000000000000000006200000000000000000000000000700000000000000000000000000070000000000000000000000000016000000000000000000000000001600000000000000000000000000350000000000000000000000000053000000000000000000000000002100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":9,"p":2,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002510000000000000000000000004527100000000000000000000001600250000000000000000000000430009100000000000000000000041000900000000000000000000004200590000000000000000000000263734100000000000000000000002510500000000000000000000000000050000000000000000000000000005100000000000000000000000000510000000000000000000000000051000000000000000000000000005100000000000000000000000000510000000000000000000000000051000000000000000000000000005100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":6,"p":6,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000270000000000000000000000000062000000000000000000000000008000000000000000000000000005300000000000000000000000001800000000000000000000000000440000000000000000000000000061000000000000000000000000007001100000000000000000000000628667400000000000000000000098100081000000000000000000008000006100000000000000000000530000800000000000000000000018100550000000000000000000000286750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":0,"p":2,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000420000000000000000000000002967810000000000000000000002910039100000000000000000000910000530000000000000000000170000043000000000000000000016000008100000000000000000000900006600000000000000000000039569500000000000000000000000122000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":8,"p":6,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000035550000000000000000000000036110400000000000000000000005100160000000000000000000000500072000000000000000000000061063000000000000000000000003453000000000000000000000000097000000000000000000000000016560000000000000000000000002403720000000000000000000000240007200000000000000000000015000160000000000000000000000700005000000000000000000000027112600000000000000000000000255510000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":3,"p":3,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002456200000000000000000000026521160000000000000000000003100004100000000000000000000000000510000000000000000000000000250000000000000000000000000150000000000000000000000000692100000000000000000000000153355000000000000000000000000000510000000000000000000000000041000000000000000000000000005100000000000000000000000001600000000000000000000000001710000000000000000000343334610000000000000000000012222200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":4,"p":4,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000332000000000000000000000000041410000000000000000000000005041000000000000000000000000603200000000000000000000000240240000000000000000000000051014000000000000000000000016000500000000000000000000005200050000000000000000000000600005000000000000000000000410000531110000000000000000194555578443000000000000000001100000500000000000000000000000000060000000000000000000000000005100000000000000000000000000320000000000000000000000000024000000000000000000000000001500000000000000000000000000060000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000"},{"t":1,"p":5,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000390000000000000000000000000154000000000000000000000000061400000000000000000000000052050000000000000000000000003005000000000000000000000000000500000000000000000000000000050000000000000000000000000005000000000000000000000000000500000000000000000000000000050000000000000000000000000004000000000000000000000000234733320000000000000000000032212221000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},{"t":5,"p":5,"g":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000013344444000000000000000000001933222200000000000000000000050000000000000000000000000024000000000000000000000000003856640000000000000000000000131115500000000000000000000000000062000000000000000000000000002500000000000000000000000000340000000000000000000000000081000000000000000000001111482000000000000000000000465640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"}];
+const dg=document.getElementById("digits");
+function inkColor(){return "#1E2622";}
+function drawDigits(){
+  dg.innerHTML="";
+  const ink=inkColor();
+  DIGITS.forEach(d=>{
+    const ok=d.t===d.p;
+    const box=document.createElement("div"); box.className="digit "+(ok?"ok":"miss");
+    const c=document.createElement("canvas"); c.width=28;c.height=28;
+    const ctx=c.getContext("2d"); const vals=[...d.g].map(Number); const mx=Math.max(...vals)||1;
+    ctx.fillStyle=ink;
+    vals.forEach((v,i)=>{if(!v)return; ctx.globalAlpha=Math.min(1,(v/mx)*1.1); ctx.fillRect(i%28,Math.floor(i/28),1,1);});
+    box.appendChild(c);
+    const lab=document.createElement("div"); lab.className="lab";
+    lab.innerHTML=`drew ${d.t}<br><span class="res">read ${d.p} ${ok?"✓":"✗"}</span>`;
+    box.appendChild(lab); dg.appendChild(box);
+  });
+}
+drawDigits();
+
+/* ---------- Week 5: bars ---------- */
+const BARS=[["Positive",0.121,0.340],["Negative",0.643,1.477],["Litigious",1.231,1.062]];
+const MAXB=1.6;
+document.getElementById("bars").innerHTML=BARS.map(([n,a,f])=>`
+  <div class="barrow"><div class="name">${n}</div><div class="barpair">
+    <div class="bar w"><i style="width:${a/MAXB*80}%"></i><span class="num">${a.toFixed(2)}%</span></div>
+    <div class="bar f"><i style="width:${f/MAXB*80}%"></i><span class="num">${f.toFixed(2)}%</span></div>
+  </div></div>`).join("");
+
+/* ---------- Week 9: word contributions (real notebook output) ---------- */
+const EX=[
+  {s:"Revenue for the third quarter increased 12% year-over-year to $4.2 billion.",pred:"Prepared",margin:10.116,
+   w:[["revenue",1.283],["for",.180],["the",-.089],["third",1.642],["quarter",1.119],["increased",2.187],["year",.744],["over",.885],["year",.744],["to",.109],["billion",1.515]]},
+  {s:"Yeah, I think that's a great question, and you know, we're kind of seeing that too.",pred:"Q&A",margin:29.576,
+   w:[["yeah",-5.119],["i",-1.357],["think",-3.103],["that's",-2.198],["a",-.328],["great",-1.025],["question",-1.653],["and",.181],["you",-1.684],["know",-3.456],["we're",-1.581],["kind",-3.088],["of",.013],["seeing",-1.199],["that",-1.312],["too",-2.463]]}
+];
+EX.forEach((e,i)=>{
+  const el=document.getElementById("nb-"+(i+1));
+  const chips=e.w.map(([w,v])=>{
+    const a=Math.min(1,Math.abs(v)/4)*55+6; const col=v>=0?"var(--fut)":"var(--neg)";
+    return `<span title="${v>0?"+":""}${v.toFixed(3)}" style="background:color-mix(in srgb,${col} ${a}%,transparent)">${w}</span>`;}).join("");
+  el.innerHTML=`<div class="verdict">Predicted ${e.pred} <span class="muted num" style="font-weight:400">· margin ${e.margin.toFixed(1)} log-points</span></div><div class="ws">${chips}</div><p class="muted" style="font-size:.9rem">“${e.s}”</p>`;
+});
+
+
+</script>
